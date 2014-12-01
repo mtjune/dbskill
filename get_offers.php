@@ -15,7 +15,7 @@ $res = mysql_query($sql, $conn);
 while($row = mysql_fetch_array($res)){
         print("<tr>");
         print("<td>".$row["meshiya_name"]."</td>");
-        print("<td>".$row["item_name"]."</td>");
+        print("<td>".$row["item_id"]."</td>");
         print("<td>".$row["price"]."</td>");
         print("</tr>\n");
 }

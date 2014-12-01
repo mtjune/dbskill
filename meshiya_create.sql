@@ -20,7 +20,7 @@ create table offers(
 	meshiya_name varchar(200),
 	item_id int,
 	price int unsigned,
-	primary key(meshiya_name, item_name)
+	primary key(meshiya_name, item_id)
 );
 create table reviews(
 	meshiya_name varchar(200),

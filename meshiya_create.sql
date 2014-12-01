@@ -33,7 +33,7 @@ create table materials(
 	name varchar(20) primary key
 );
 create table uses(
-	item_name varchar(20),
+	item_id int,
 	material_name varchar(20),
-	primary key(item_name, material_name)
+	primary key(item_id, material_name)
 );

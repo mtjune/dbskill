@@ -15,7 +15,7 @@ mysql_set_charset("utf8");
 
 $meshiya_name = $_POST['meshiya_name'];
 
-$sql = "select * from meshiyas where meshiyas.name like %".$meshiya_name."%;";
+$sql = "select * from meshiyas where meshiyas.name like \"%".$meshiya_name."%\";";
 $res = mysql_query($sql, $conn);
 while($row = mysql_fetch_array($res)){
         print("<tr>");

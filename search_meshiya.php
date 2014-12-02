@@ -30,7 +30,7 @@ mysql_free_result($res);
 ?>
 </table>
 <?php 
-	print(.$meshiya_name.);
+	print($meshiya_name);
  ?>
 
 </body>

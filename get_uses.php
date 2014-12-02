@@ -1,5 +1,6 @@
 <html>
-<head><title>使用テーブル</title></head> 
+<head><title>使用テーブル</title>
+<link rel="stylesheet" type="text/css" href="style.css"></head> 
 <body>
 <table border="1">
 <tr><th>商品ID</th><th>原材料名</th></tr>

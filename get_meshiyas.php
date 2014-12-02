@@ -1,5 +1,6 @@
 <html>
-<head><title>飯屋テーブル</title></head> 
+<head><title>飯屋テーブル</title>
+<link rel="stylesheet" type="text/css" href="style.css"></head> 
 <body>
 <table border="1">
 <tr><th>店名</th><th>住所</th><th>カテゴリ</th><th>営業時間</th><th>定休日</th></tr>

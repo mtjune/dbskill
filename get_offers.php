@@ -1,5 +1,6 @@
 <html>
-<head><title>提供テーブル</title></head> 
+<head><title>提供テーブル</title>
+<link rel="stylesheet" type="text/css" href="style.css"></head> 
 <body>
 <table border="1">
 <tr><th>飯屋名</th><th>商品ID</th><th>価格</th></tr>

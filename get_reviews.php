@@ -1,5 +1,6 @@
 <html>
-<head><title>レビューテーブル</title></head> 
+<head><title>レビューテーブル</title>
+<link rel="stylesheet" type="text/css" href="style.css"></head> 
 <body>
 <table border="1">
 <tr><th>飯屋名</th><th>ユーザID</th><th>評価値</th><th>コメント</th></tr>

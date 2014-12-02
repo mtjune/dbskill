@@ -1,5 +1,6 @@
 <html>
-<head><title>ユーザテーブル</title></head> 
+<head><title>ユーザテーブル</title>
+<link rel="stylesheet" type="text/css" href="style.css"></head> 
 <body>
 <table border="1">
 <tr><th>ユーザID</th><th>ユーザ名</th><th>パスワード</th></tr>

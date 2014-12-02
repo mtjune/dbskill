@@ -1,5 +1,6 @@
 <html>
-<head><title>原材料テーブル</title></head> 
+<head><title>原材料テーブル</title>
+<link rel="stylesheet" type="text/css" href="style.css"></head> 
 <body>
 <table border="1">
 <tr><th>原材料名</tr>

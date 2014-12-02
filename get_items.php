@@ -1,5 +1,6 @@
 <html>
-<head><title>商品テーブル</title></head> 
+<head><title>商品テーブル</title>
+<link rel="stylesheet" type="text/css" href="style.css"></head> 
 <body>
 <table border="1">
 <tr><th>商品ID</th><th>商品名</th><th>写真</th><th>備考</th></tr>

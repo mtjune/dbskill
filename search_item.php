@@ -15,7 +15,7 @@ mysql_set_charset("utf8");
 
 $item_name = $_POST['item_name'];
 
-$sql = "select items.name as item_name, offers.price as price, meshiyas.name as meshiya_name from meshiyas, offers, items where mehiyas.name = offers.meshiya_name and offers.item_id = items.id and items_name like \"%".$item_name."%\";";
+$sql = "select items.name as item_name, offers.price as price, meshiyas.name as meshiya_name from meshiyas, offers, items where mehiyas.name = offers.meshiya_name and offers.item_id = items.id and items.name like \"%".$item_name."%\";";
 $res = mysql_query($sql, $conn);
 while($row = mysql_fetch_array($res)){
         print("<tr>");

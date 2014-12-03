@@ -22,7 +22,7 @@ if ($address[0] != "no_address" || sizeof($address) == 0) {
 	$sql = $sql." and (";
 	
 	for ($i=0; $i < sizeof($address); $i++) { 
-		$sql = $sql."meshiyas.address like \"%".$address."\"";
+		$sql = $sql."meshiyas.address like \"%".$address[i]."%\")";
 		if($i + 1 < sizeof($address)){
 			$sql = $sql." or";
 		} else {

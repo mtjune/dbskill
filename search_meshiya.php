@@ -30,7 +30,7 @@ if ($address[0] != "no_address" && sizeof($address) != 0) {
 		}
 	}
 }
-$sql .= ";"
+$sql .= ";";
 
 $res = mysql_query($sql, $conn);
 while($row = mysql_fetch_array($res)){

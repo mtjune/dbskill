@@ -26,10 +26,11 @@ if ($address[0] != "no_address" && sizeof($address) != 0) {
 		if($i + 1 < sizeof($address)){
 			$sql .= " or ";
 		} else {
-			$sql .= ");";
+			$sql .= ")";
 		}
 	}
 }
+$sql .= ";"
 
 $res = mysql_query($sql, $conn);
 while($row = mysql_fetch_array($res)){

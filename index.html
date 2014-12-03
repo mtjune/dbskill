@@ -7,7 +7,7 @@
 <h1>つくめし</h1>
 
 <p>
-作成者 : 山田純也<br>
+作成者 : 山田純也<br />
 学籍番号 : 201413137
 </p>
 <p>
@@ -15,8 +15,22 @@
 <form action="search_meshiya.php" method="post">
 <table>
 <tr><td>名前</td><td><input type="text" name="meshiya_name"></td></tr>
+<tr>
+	<td>住所</td>
+	<td>
+		<input type="checkbox" name="address[]" value="no_address" checked="checked" />住所を指定する
+		<input type="checkbox" name="address[]" value="天久保1丁目" />天久保1丁目
+		<input type="checkbox" name="address[]" value="天久保2丁目" />天久保2丁目
+		<input type="checkbox" name="address[]" value="天久保3丁目" />天久保3丁目
+		<input type="checkbox" name="address[]" value="天久保4丁目" />天久保4丁目
+		<input type="checkbox" name="address[]" value="春日1丁目" />春日1丁目
+		<input type="checkbox" name="address[]" value="春日2丁目" />春日2丁目
+		<input type="checkbox" name="address[]" value="春日3丁目" />春日3丁目
+		<input type="checkbox" name="address[]" value="桜" />桜
+	</td>
+</tr>
 </table>
-<input type="submit" value="検索">
+<input type="submit" value="検索" />
 </form>
 </p>
 

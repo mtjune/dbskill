@@ -18,11 +18,11 @@ $address = $_POST['address'];
 
 $sql = "select * from meshiyas where (meshiyas.name like \"%".$meshiya_name."%\")";
 
-if ($address[0] != "no_address" || sizeof($address) == 0) {
+if ($address[0] != "no_address" && sizeof($address) != 0) {
 	$sql = $sql." and (";
 	
 	for ($i=0; $i < sizeof($address); $i++) { 
-		$sql = $sql."meshiyas.address like \"%".$address[i]."%\")";
+		$sql = $sql."meshiyas.address = \"".$address[i]."\")";
 		if($i + 1 < sizeof($address)){
 			$sql = $sql." or";
 		} else {

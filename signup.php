@@ -17,7 +17,7 @@ $user_name = $_POST['user_name'];
 $user_pass = $_POST['user_pass'];
 
 
-$sql = "insert into users(name, pass) value('$user_name', '$user_pass');"
+$sql = "insert into users(name, pass) value('$user_name', '$user_pass');";
 mysql_query($sql, $conn) or die("登録できませんでした");
 print("登録完了");
 

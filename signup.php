@@ -1,9 +1,9 @@
 <html>
 <head><title>Phorm</title>
-<link rel="stylesheet" type="text/css" href="style.css"></head> 
+<link rel="stylesheet" type="text/css" href="style.css">
+</head> 
 <body>
 <h1>ユーザ登録</h1>
-<h2>写真テーブル</h2>
 
 <?php
 $host = "localhost";
@@ -21,7 +21,6 @@ $sql = "insert into users(name, pass) value('$user_name', '$user_pass');"
 mysql_query($sql, $conn) or die("登録できませんでした");
 print("登録完了");
 
-mysql_free_result($res);
 ?>
 
 

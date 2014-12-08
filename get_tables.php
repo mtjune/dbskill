@@ -83,7 +83,7 @@ mysql_free_result($res);
 
 <h2>付与テーブル</h2>
 <table border="1">
-<tr><th>飯屋名</th><th>ユーザID</th><th>評価値</th><th>コメント</th></tr>
+<tr><th>タグ名</th><th>写真ID</th></tr>
 <?php
 
 $sql = "select * from additiions";
@@ -100,7 +100,7 @@ mysql_free_result($res);
 
 <h2>ブックマークテーブル</h2>
 <table border="1">
-<tr><th>原材料名</tr>
+<tr><th>ユーザID</th><th>タグ名</th></tr>
 <?php
 
 $sql = "select * from bookmarks";

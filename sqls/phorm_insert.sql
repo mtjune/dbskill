@@ -1,0 +1,1 @@
+insert into pics(title, file_name, remarks, user_id, post_date) value("タイトル1", "ファイル名", "備考", 1, )

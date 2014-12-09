@@ -30,7 +30,7 @@ if($row[0]['pass'] == $user_pass){
 	// 一致している時の処理
 
 	if (is_uploaded_file($_FILES["file_up"]["tmp_name"])) {
- 		if (move_uploaded_file($_FILES["file_up"]["tmp_name"], "files/" . $_FILES["file_up"]["name"])) {
+ 		if (move_uploaded_file($_FILES["file_up"]["tmp_name"], "pictures/" . $_FILES["file_up"]["name"])) {
 			chmod("files/" . $_FILES["file_up"]["name"], 0644);
 			echo $_FILES["file_up"]["name"] . "をアップロードしました。";
 		} else {
@@ -42,13 +42,13 @@ if($row[0]['pass'] == $user_pass){
 
 	$file_name = $_FILES["upfile"]["name"];
 	$sql = "insert into pics(title, file_name, remarks, user_id) value('$pic_title', '$file_name', '$pic_remarks', '$user_id')";
+	mysql_query($sql, $conn) or die("登録できませんでした");
+	print("登録完了");
 
+} else {
+	print("ユーザ認証エラーです。");
 }
-
-
-$sql = "insert into users(name, pass) value('$user_name', '$user_pass');";
-mysql_query($sql, $conn) or die("登録できませんでした");
-print("登録完了");
+mysql_free_result($res);
 
 ?>
 

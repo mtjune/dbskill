@@ -24,9 +24,10 @@ $pic_remarks = $_POST['pic_remarks'];
 
 // IDとパスワードが一致しているか調査
 $sql = "select * from users where id = '$user_id'";
-$row = mysql_query($sql, $conn);
+$res = mysql_query($sql, $conn);
+$row = mysql_fetch_assoc($res);
 
-if($row[0]['pass'] == $user_pass){
+if($row['pass'] == $user_pass){
 	// 一致している時の処理
 
 	if (is_uploaded_file($_FILES["file_up"]["tmp_name"])) {

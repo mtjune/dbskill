@@ -40,7 +40,7 @@ if($row['pass'] == $user_pass){
 		// ファイルの拡張子取得
 		list($file_name, $file_type) = explode(".", $_FILES["file_up"]["name"]);
 		// 新しいファイルの名前
-		$file_name_new = "pictures/" . $next_id . $file_type;
+		$file_name_new = "pictures/" . $next_id . "." . $file_type;
 
  		if (move_uploaded_file($_FILES["file_up"]["tmp_name"], $file_name_new )) {
 			chmod($file_name_new, 0644);

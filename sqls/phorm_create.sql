@@ -8,7 +8,7 @@ create table pics(
 );
 
 create table users(
-	id int primary key auto_increment,
+	id varchar(20) primary key,
 	name varchar(20),
 	pass varchar(20)
 );

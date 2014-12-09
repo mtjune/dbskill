@@ -41,8 +41,8 @@ if($row['pass'] == $user_pass){
 		echo "ファイルが選択されていません。";
 	}
 
-	$file_name = $_FILES["upfile"]["name"];
-	$sql = "insert into pics(title, file_name, remarks, user_id) value('$pic_title', '$file_name', '$pic_remarks', '$user_id')";
+	$file_name = $_FILES["file_up"]["name"];
+	$sql = "insert into pics(title, file_name, remarks, user_id) value('$pic_title', '$file_name', '$pic_remarks', '$user_id');";
 	mysql_query($sql, $conn) or die("登録できませんでした<br />".$sql);
 	print("登録完了");
 

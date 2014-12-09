@@ -23,7 +23,7 @@ while($row = mysql_fetch_array($res)){
         print("<td>".$row["remarks"]."</td>");
         print("<td>".$row["user_id"]."</td>");
         print("<td>".$row["post_date"]."</td>");
-        print("<td><img src='" . $row["file_name"] . "' alt='写真' width='193'></td>");
+        print("<td><a href='show_picture.php?pic_id=" .$row['id'] ."'><img src='" . $row["file_name"] . "' alt='写真' width='193'></a></td>");
         print("</tr>\n");
 }
 mysql_free_result($res);

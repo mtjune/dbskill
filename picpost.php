@@ -41,10 +41,10 @@ if($row['pass'] == $user_pass){
 		list($file_name, $file_type) = explode(".", $_FILES["file_up"]["name"]);
 		// 新しいファイルの名前
 		$file_name_new = "pictures/" . $next_id . $file_type;
-		
- 		if (move_uploaded_file($_FILES["file_up"]["tmp_name"], $file_name_new ) {
-			chmod("files/" . $_FILES["file_up"]["name"], 0644);
-			echo $_FILES["file_up"]["name"] . "をアップロードしました。<br />";
+
+ 		if (move_uploaded_file($_FILES["file_up"]["tmp_name"], $file_name_new )) {
+			chmod($file_name_new, 0644);
+			echo $pic_title . "をアップロードしました。<br />";
 
 			$sql = "insert into pics(title, file_name, remarks, user_id) value('$pic_title', '$file_name_new', '$pic_remarks', '$user_id');";
 			mysql_query($sql, $conn) or die("登録できませんでした<br />".$sql);

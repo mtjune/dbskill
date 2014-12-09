@@ -23,17 +23,33 @@ $pic_title = $_POST['pic_title'];
 $pic_remarks = $_POST['pic_remarks'];
 
 // IDとパスワードが一致しているか調査
-$sql = "select * from users where id = '$user_id'";
+$sql = "select * from users where id = '$user_id';";
 $res = mysql_query($sql, $conn);
 $row = mysql_fetch_assoc($res);
 
 if($row['pass'] == $user_pass){
 	// 一致している時の処理
 
+	// 次のIDの値を取得
+	$sql = "show table status like'pics';";
+	$res = mysql_query($sql, $conn);
+	$row = mysql_fetch_object($res);
+	$next_id = $row->Auto_increment;
+
 	if (is_uploaded_file($_FILES["file_up"]["tmp_name"])) {
- 		if (move_uploaded_file($_FILES["file_up"]["tmp_name"], "pictures/" . $_FILES["file_up"]["name"])) {
+		// ファイルの拡張子取得
+		list($file_name, $file_type) = explode(".", $_FILES["file_up"]["name"]);
+		// 新しいファイルの名前
+		$file_name_new = "pictures/" . $next_id . $file_type;
+		
+ 		if (move_uploaded_file($_FILES["file_up"]["tmp_name"], $file_name_new ) {
 			chmod("files/" . $_FILES["file_up"]["name"], 0644);
 			echo $_FILES["file_up"]["name"] . "をアップロードしました。<br />";
+
+			$sql = "insert into pics(title, file_name, remarks, user_id) value('$pic_title', '$file_name_new', '$pic_remarks', '$user_id');";
+			mysql_query($sql, $conn) or die("登録できませんでした<br />".$sql);
+			print("登録完了");
+
 		} else {
 			echo "ファイルをアップロードできません。";
 		}
@@ -41,10 +57,6 @@ if($row['pass'] == $user_pass){
 		echo "ファイルが選択されていません。";
 	}
 
-	$file_name = $_FILES["file_up"]["name"];
-	$sql = "insert into pics(title, file_name, remarks, user_id) value('$pic_title', '$file_name', '$pic_remarks', '$user_id');";
-	mysql_query($sql, $conn) or die("登録できませんでした<br />".$sql);
-	print("登録完了");
 
 } else {
 	print("ユーザ認証エラーです。");

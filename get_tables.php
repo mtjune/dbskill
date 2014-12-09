@@ -22,7 +22,7 @@ while($row = mysql_fetch_array($res)){
         print("<td>".$row["file_name"]."</td>");
         print("<td>".$row["remarks"]."</td>");
         print("<td>".$row["user_id"]."</td>");
-        print("<td>".$row["date"]."</td>");
+        print("<td>".$row["post_date"]."</td>");
         print("</tr>\n");
 }
 mysql_free_result($res);

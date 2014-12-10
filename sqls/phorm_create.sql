@@ -3,7 +3,7 @@ create table pics(
 	title varchar(20),
 	file_name text,
 	remarks text,
-	user_id int,
+	user_id varchar(20),
 	post_date date
 );
 
@@ -19,7 +19,7 @@ create table tags(
 
 create table evaluations(
 	pic_id int,
-	user_id int,
+	user_id varchar(20),
 	value int,
 	primary key(pic_id, user_id),
 	check(value >= 1 and value <= 5)
@@ -32,7 +32,7 @@ create table additions(
 );
 
 create table bookmarks(
-	user_id int,
+	user_id varchar(20),
 	tag_name varchar(20),
 	primary key(user_id, tag_name)
 );

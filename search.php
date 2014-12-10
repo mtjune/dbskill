@@ -1,3 +1,29 @@
+<?php
+
+$host = "localhost";
+if(!$conn = mysql_connect($host, "s1413137", "s1413137hoge")){
+        die("MySQL接続エラー.<br />");
+}
+mysql_select_db("s1413137", $conn);
+mysql_set_charset("utf8");
+
+$mode = $_GET['search_mode'];
+$word = $_GET['word'];
+
+if($mode == "keyword"){
+	$sql = "select pics.id as pic_id, pics.title as title, pics.file_name as file_name, users.name as user_name from pics, additions, users where users.id = pics.user_id and ((pics.title like '%$word%') or (pics.remarks like '%$word%') or (pics.id = additions.pic_id and additions.tag_name like '%$word%'));";
+} else if($mode == "title"){
+	$sql = "select pics.id as pic_id, pics.title as title, pics.file_name as file_name, users.name as user_name from pics, users where users.id = pics.user_id and pics.title like '%$word%';";
+} else if($mode == "tag"){
+	$sql = "select pics.id as pic_id, pics.title as title, pics.file_name as file_name, users.name as user_name from pics, additions, users where users.id = pics.user_id and pics.id = additions.pic_id and additions.tag_name like '%$word%';";
+}
+
+$res = mysql_query($sql, $conn);
+
+
+
+?>
+
 <!DOCTYPE html>
 <html dir="ltr" lang="ja">
 <head>
@@ -53,19 +79,23 @@
 <div id="wrapper">
   
   <!-- コンテンツ -->
-	<section id="main">
-  
-    
+	<section id="main">    
     <section class="content">
     	<h3 class="heading">ホームページサンプル株式会社の取り組み</h3>
-      <article>
-			<img src="images/sample1.jpg" width="190" height="140" alt="" class="alignright border" />
-			<p>ホームページサンプル株式会社では最新技術と自然との調和を目指します。革新的な技術で世の中を動かす企業を目指します。ホームページサンプル株式会社では最新技術と自然との調和を目指します。革新的な技術で世の中を動かす企業を目指します。ホームページサンプル株式会社では最新技術と自然との調和を目指します。革新的な技術で世の中を動かす。革新的な技術で世の中を動かす企業を目指します。ホームページサンプル株式会社では最新技術と自然との調和を目指します。革新的な技術で世の中を動かす。革新的な技術で世の中を動かす。</p>
-    	</article>
-    	<article>
-			<img src="images/sample1.jpg" width="190" height="140" alt="" class="alignright border" />
-			<p>ホームページサンプル株式会社では最新技術と自然との調和を目指します。革新的な技術で世の中を動かす企業を目指します。ホームページサンプル株式会社では最新技術と自然との調和を目指します。革新的な技術で世の中を動かす企業を目指します。ホームページサンプル株式会社では最新技術と自然との調和を目指します。革新的な技術で世の中を動かす。革新的な技術で世の中を動かす企業を目指します。ホームページサンプル株式会社では最新技術と自然との調和を目指します。革新的な技術で世の中を動かす。革新的な技術で世の中を動かす。</p>
-    	</article>
+<?php
+
+while($row = mysql_fetch_assoc($res)){
+	print("<article>");
+	print("<a href='show_picture.php?pic_id=".$row['pic_id']."'><img src='".$row['file_name']."' width='190' height='140' alt='".$row['title']."' class='alignleft border' />");
+	print("<p></p>");
+	print("<p><h3>".$row['title']."</h3></p>");
+	print("<p></p>");
+	print("<p><h4>	:".$row['user_name']."</h4></p>");
+	print("</article");
+}
+mysql_free_result($res);
+
+?>
     </section>
     
     <section class="content">

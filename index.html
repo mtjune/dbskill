@@ -56,11 +56,19 @@
 	<div id="mainBanner">
 		<img src="images/mainImg.jpg" alt="">
 		<form action="search.php" method="get">
+		写真を探す <input type="text" name="word"><input type="submit" value="検索">
 		<table>
 			<tr>
-				<td>画像を探す</td>
-				<td><input type="text" name="word"></td>
-				<td><input type="submit" value="検索" /></td>
+				<td><input type="radio" name="search_mode" value="keyword" checked></td>
+				<td>キーワード検索</td>
+			</tr>
+			<tr>
+				<td><input type="radio" name="search_mode" value="title" checked></td>
+				<td>タイトル検索</td>
+			</tr>
+			<tr>
+				<td><input type="radio" name="search_mode" value="tag" checked></td>
+				<td>タグ検索</td>
 			</tr>
 		</table>
 		</form>

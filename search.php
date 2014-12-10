@@ -86,7 +86,7 @@ $res = mysql_query($sql, $conn);
 
 while($row = mysql_fetch_assoc($res)){
 	print("<article>");
-	print("<a href='show_picture.php?pic_id=".$row['pic_id']."'><img src='".$row['file_name']."' width='190' height='140' alt='".$row['title']."' class='alignleft border' />");
+	print("<a href='show_picture.php?pic_id=".$row['pic_id']."'><img src='".$row['file_name']."' width='190' height='140' alt='".$row['title']."' class='alignleft border' /></a>");
 	print("<p></p>");
 	print("<p><h3>".$row['title']."</h3></p>");
 	print("<p></p>");

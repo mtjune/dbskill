@@ -1,37 +1,129 @@
-<html>
+<!DOCTYPE html>
+<html dir="ltr" lang="ja">
 <head>
-<title>Phorm</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=yes, maximum-scale=1.0, minimum-scale=1.0">
+<title>Phorm : 写真投稿サイト</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="stylesheet" href="style.css" type="text/css" media="screen">
+<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<script src="js/css3-mediaqueries.js"></script>
+<![endif]-->
+<script src="js/jquery1.7.2.min.js"></script>
+<script src="js/script.js"></script>
 </head>
-<body>
-<h1>Phorm</h1>
 
-<p>
-作成者 : 山田純也<br />
-学籍番号 : 201413137
-</p>
-<p>
-タイトル検索<br>
-<form action="search_meshiya.php" method="post">
-<table>
-<tr>
-	<td>名前</td><td><input type="text" name="meshiya_name"></td>
-</tr>
-</table>
-<input type="submit" value="検索" />
-</form>
-</p>
-<p>
-<a href="signup_form.html">ユーザ登録</a>
-</p>
-<p>
-<a href="picpost_form.html">写真投稿</a>
-</p>
-<p>
-<a href="get_tables.php">全テーブルを表示</a>
-</p>
-<p>
-<a href="get_pics.php">全写真表示</a>
-</p>
+<body>
+<header id="header">
+  <h1>写真投稿サイトです</h1>
+  
+  <!-- ロゴ -->
+	<div class="logo">
+		<a href="index.html"><img src="images/logo.png" width="45" height="45" alt="Sample site" /><p>Phorm<span>Photos posted site</span></p></a>
+	</div>
+	<!-- / ロゴ -->
+	<!-- 電話番号+受付時間 -->
+	<div class="info">
+		<p class="tel"><span>作成者:</span>山田純也</p>
+		<p class="open">学籍番号: 201413137</p>
+	</div>
+	<!-- / 電話番号+受付時間 -->
+</header>
+
+<!-- メインナビゲーション -->
+<nav id="mainNav">
+	<div class="inner">
+  	<a class="menu" id="menu"><span>MENU</span></a>
+		<div class="panel">   
+    	<ul>
+    		<li class="active"><a href="index.html"><strong>トップページ</strong><span>Top</span></a></li>
+				<li><a href="signup_form.html"><strong>ユーザ登録</strong><span>Sign Up</span></a></li>
+				<li><a href="picpost_form.html"><strong>写真投稿</strong><span>Post</span></a></li>
+				<li><a href="subpage.html"><strong>弊社の取り組み</strong><span>Approach</span></a></li>
+				<li><a href="get_pics.php"><strong>全写真を表示</strong><span>Show Photos</span></a></li>
+				<li class="last"><a href="get_tables.php"><strong>全テーブルを表示</strong><span>Show Tables</span></a></li>
+			</ul>   
+    </div>
+	</div> 
+</nav>
+<!-- / メインナビゲーション -->
+  
+<div id="wrapper">
+  
+  <!-- メイン画像 -->
+	<div id="mainBanner">
+		<img src="images/mainImg.jpg" alt="">
+	</div>
+	<!-- / メイン画像 -->
+
+  <!-- 3カラム -->
+  <section class="gridWrapper">
+		<article class="grid">
+      <div class="box">
+				<img src="images/top_m1.jpg" width="290" height="290" alt="">
+				<h3>自然との調和を目指す企業です</h3>
+				<p>ホームページサンプル株式会社では最新技術と自然との調和を目指します。革新的な技術で世の中を動かす企業を目指します。</p>
+				<p class="readmore"><a href="subpage.html">詳細を確認する</a></p>
+      </div>
+		</article>
+		<article class="grid">
+			<div class="box">
+      	<img src="images/top_m2.jpg" width="290" height="290" alt="">
+				<h3>自然との調和を目指す企業です</h3>
+				<p>ホームページサンプル株式会社では最新技術と自然との調和を目指します。革新的な技術で世の中を動かす企業を目指します。</p>
+				<p class="readmore"><a href="subpage.html">詳細を確認する</a></p>
+      </div>
+		</article>
+    <article class="grid">
+    	<div class="box">
+				<img src="images/top_m3.jpg" width="290" height="290" alt="">
+				<h3>自然との調和を目指す企業です</h3>
+				<p>ホームページサンプル株式会社では最新技術と自然との調和を目指します。革新的な技術で世の中を動かす企業を目指します。</p>
+				<p class="readmore"><a href="subpage.html">詳細を確認する</a></p>
+			</div>
+    </article>
+	</section>
+	<!-- / 3カラム -->
+  
+</div>
+ 
+<!-- フッター -->
+<footer id="footer">
+	<div class="inner">
+  	<!-- 左側 -->
+		<div id="info" class="grid">
+			<!-- ロゴ -->
+			<div class="logo">
+				<a href="index.html"><img src="images/logo.png" width="45" height="45" alt="Sample site"><p>Company Name<br><span>Your Company Slogan</span></p></a>
+			</div>
+			<!-- / ロゴ -->
+			<!-- 電話番号+受付時間 -->
+			<div class="info">
+				<p class="tel"><span>電話:</span> 012-3456-7890</p>
+				<p class="open">受付時間: 平日 AM 10:00 〜 PM 5:00</p>
+			</div>
+			<!-- / 電話番号+受付時間 -->
+		</div>  
+		<!-- / 左側 -->
+		<!-- 右側 ナビゲーション -->
+		<ul class="footnav">
+			<li><a href="subpage.html">全テーブルを表示</a></li>
+			<li><a href="subpage.html">コンピュータ事業</a></li>
+			<li><a href="subpage.html">飲食店事業</a></li>
+			<li><a href="subpage.html">介護・医療事業</a></li>
+			<li><a href="subpage.html">ごあいさつ</a></li>
+			<li><a href="subpage.html">サービス概要</a></li>
+			<li><a href="subpage.html">会社情報</a></li>
+			<li><a href="subpage.html">お問い合わせ</a></li>
+			<li><a href="subpage.html">サイトマップ</a></li>
+		</ul>
+		<!-- / 右側 ナビゲーション -->
+	</div>
+</footer>
+<!-- / フッター -->
+<address>Copyright(c) 2013 Sample Inc. All Rights Reserved. Design by <a href="http://f-tpl.com" target="_blank" rel="nofollow">http://f-tpl.com</a></address>
+
 </body>
 </html>

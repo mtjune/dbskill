@@ -96,7 +96,8 @@ while($row = mysql_fetch_assoc($res)){
 mysql_free_result($res);
 
 ?>
-    </section> 
+    </section>
+    </section>
 	<!-- / コンテンツ -->
 
 	<aside id="sidebar">

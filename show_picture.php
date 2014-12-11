@@ -7,7 +7,7 @@ mysql_select_db("s1413137", $conn);
 mysql_set_charset("utf8");
 
 $pic_id = $_GET['pic_id'];
-$sql = "select pics.title as title, pics.file_name as file_name, pics.remarks as remarks, pics.post_date as post_date from pics, users where pics.user_id = users.id and id = '$pic_id';";
+$sql = "select pics.title as title, pics.file_name as file_name, pics.remarks as remarks, pics.post_date as post_date from pics, users where pics.user_id = users.id and pics.id = '$pic_id';";
 
 $res = mysql_query($sql, $conn);
 $row = mysql_fetch_assoc($res);
@@ -83,41 +83,16 @@ mysql_free_result($res);
         <h3 class="heading">ホームページサンプル株式会社の取り組み</h3>
         <article>
 <?php
-        print("<img src='$file_name' width='600'  alt='$title' class='alignright border' />");
+        print("<img src='$pic_file_name' width='600'  alt='$pic_title' class='alignright border' />");
         
 ?>
         </article>
         <article>
-        <table class="table">
-                                <tr>
-                                        <th>会社名</th>
-                                        <td>ホームページサンプル株式会社（英語表記 Homepage sample Inc.）</td>
-                                </tr>
-                                <tr>
-                                        <th>設立</th>
-                                        <td>平成10年1月10日</td>
-                                </tr>
-                                <tr>
-                                        <th>事業内容</th>
-                                        <td>IT・マーケティング・福祉など</td>
-                                </tr>
-                                <tr>
-                                        <th>住所</th>
-                                        <td>〒012-3456 見本県見本市サンプル1-2</td>
-                                </tr>
-                                <tr>
-                                        <th>電話番号</th>
-                                        <td>0123-4567-89012</td>
-                                </tr>
-                                <tr>
-                                        <th>メールアドレス</th>
-                                        <td>info@example.com</td>
-                                </tr>
-                                
+        <table class="table">   
 <?php
-        print("<tr><th>タイトル</th><td>$title</td></tr>");
+        print("<tr><th>タイトル</th><td>$pic_title</td></tr>");
         print("<tr><th>投稿者</th><td>$pic_user_name</td></tr>");
-        print("<tr><th>投稿日</th><td>$post_date</td></tr>");
+        print("<tr><th>投稿日</th><td>$pic_post_date</td></tr>");
         print("<tr><th>備考</th><td>$pic_remarks</td></tr>");
 ?>
         </table>

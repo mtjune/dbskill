@@ -65,7 +65,7 @@ mysql_free_result($res);
                                 <li><a href="subpage.html"><strong>ごあいさつ</strong><span>Greeting</span></a></li>
                                 <li><a href="subpage.html"><strong>サービス概要</strong><span>Service</span></a></li>
                                 <li><a href="subpage.html"><strong>弊社の取り組み</strong><span>Approach</span></a></li>
-                                <li class="active"><a href="subpage.html"><strong>会社情報</strong><span>Company</span></a></li>
+                                <li><a href="subpage.html"><strong>会社情報</strong><span>Company</span></a></li>
                                 <li class="last"><a href="subpage.html"><strong>お問い合わせ</strong><span>Contact</span></a></li>
                         </ul>   
     </div>

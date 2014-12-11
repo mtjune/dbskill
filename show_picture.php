@@ -122,7 +122,7 @@ $sql = "select tag_name from addition where additions.pic_id = '$pic_id';";
 $res = mysql_query($sql, $conn);
 while($row = mysql_fetch_assoc($res)){
         $tag = $row['tag_name'];
-        print("<li><a href='search.php?search_mode=tag&word=$tag'>$tag</a></li>")
+        print("<li><a href='search.php?search_mode=tag&word=$tag'>$tag</a></li>");
 }
 
 ?>

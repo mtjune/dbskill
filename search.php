@@ -101,6 +101,28 @@ mysql_free_result($res);
 	<!-- / コンテンツ -->
 
 	<aside id="sidebar">
+	
+		<form action="search.php" method="get">
+		<table>
+			<tr><td>写真を探す</td></tr>
+			<tr><td><input type="text" name="word"></td><td><input type="submit" value="検索"></td></tr>
+		</table>
+		<table>
+			<tr>
+				<td><input type="radio" name="search_mode" value="keyword" checked></td>
+				<td>キーワード検索</td>
+			</tr>
+			<tr>
+				<td><input type="radio" name="search_mode" value="title"></td>
+				<td>タイトル検索</td>
+			</tr>
+			<tr>
+				<td><input type="radio" name="search_mode" value="tag"></td>
+				<td>タグ検索</td>
+			</tr>
+		</table>
+		</form>
+
        
 		<h3 class="heading">革新的な技術</h3>
     <article>

@@ -87,7 +87,6 @@ mysql_free_result($res);
         
 ?>
         </article>
-        <section class="content">
         <article>
         <table class="table">   
 <?php
@@ -98,8 +97,8 @@ mysql_free_result($res);
 ?>
         </table>
         </article>
-        </section>
-    </section>    
+    </section>
+    </section>
         <!-- / コンテンツ -->
 
         <aside id="sidebar">

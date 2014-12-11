@@ -80,10 +80,10 @@ mysql_free_result($res);
   
     
     <section class="content">
-        <h3 class="heading">ホームページサンプル株式会社の取り組み</h3>
+        <h3 class="heading"><?php print($pic_title) ?></h3>
         <article>
 <?php
-        print("<img src='$pic_filename' width='600'  alt='$pic_title' class='alignright border' />");
+        print("<img src='$pic_filename' width='600' alt='$pic_title' class='alignright border' />");
         
 ?>
         </article>
@@ -118,7 +118,7 @@ mysql_free_result($res);
         <ul>
 <?php
 
-$sql = "select tag_name from addition where additions.pic_id = '$pic_id';";
+$sql = "select tag_name from additions where additions.pic_id = '$pic_id';";
 $res = mysql_query($sql, $conn);
 while($row = mysql_fetch_assoc($res)){
         $tag = $row['tag_name'];

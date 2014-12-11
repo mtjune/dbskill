@@ -108,88 +108,26 @@ mysql_free_result($res);
       </article>
                 </section>
     
-                <section class="content">
-                        <h3 class="heading">会社概要</h3>
-      <article>
-                                <table class="table">
-                                <tr>
-                                        <th>会社名</th>
-                                        <td>ホームページサンプル株式会社（英語表記 Homepage sample Inc.）</td>
-                                </tr>
-                                <tr>
-                                        <th>設立</th>
-                                        <td>平成10年1月10日</td>
-                                </tr>
-                                <tr>
-                                        <th>事業内容</th>
-                                        <td>IT・マーケティング・福祉など</td>
-                                </tr>
-                                <tr>
-                                        <th>住所</th>
-                                        <td>〒012-3456 見本県見本市サンプル1-2</td>
-                                </tr>
-                                <tr>
-                                        <th>電話番号</th>
-                                        <td>0123-4567-89012</td>
-                                </tr>
-                                <tr>
-                                        <th>メールアドレス</th>
-                                        <td>info@example.com</td>
-                                </tr>
-                                </table>
-        </article>
-                </section>
-    
-    <section class="content" id="gallery">
-                        <h3 class="heading">写真ギャラリー</h3>
-                                <article>
-                                        <figure class="grid"><a href="subpage.html"><img src="images/gallery1.jpg" width="190" height="140" alt=""></a></figure>
-                                        <figure class="grid"><a href="subpage.html"><img src="images/gallery2.jpg" width="190" height="140" alt=""></a></figure>
-                                        <figure class="grid"><a href="subpage.html"><img src="images/gallery3.jpg" width="190" height="140" alt=""></a></figure>
-                                        <figure class="grid"><a href="subpage.html"><img src="images/gallery4.jpg" width="190" height="140" alt=""></a></figure>
-                                        <figure class="grid"><a href="subpage.html"><img src="images/gallery5.jpg" width="190" height="140" alt=""></a></figure>
-                                        <figure class="grid"><a href="subpage.html"><img src="images/gallery6.jpg" width="190" height="140" alt=""></a></figure>
-                                </article>
-                </section>
-    
-        </section>
+        
         <!-- / コンテンツ -->
 
         <aside id="sidebar">
        
-                <h3 class="heading">革新的な技術</h3>
+                <h3 class="heading">タグ</h3>
     <article>
-                        <ul>
-                                <li><a href="subpage.html">環境への取り組みについての説明ページです</a></li>
-                                <li><a href="subpage.html">ecoキャンペーン開催中です</a></li>
-                                <li><a href="subpage.html">オフィスの移転に関して</a></li>
-                                <li><a href="subpage.html">最新商品のご紹介</a></li>
-                                <li><a href="subpage.html">新規サービスを開始しました</a></li>
-                                <li><a href="subpage.html">環境賞受賞に関してはこちらをご確認ください</a></li>
-                        </ul>
+        <ul>
+<?php
+
+$sql = "select tag_name from addition where additions.pic_id = '$pic_id';";
+$res = mysql_query($sql, $conn);
+while($row = mysql_fetch_assoc($res)){
+        $tag = $row['tag_name'];
+        print("<li><a href='search.php?search_mode=tag&word=$tag'>$tag</a></li>")
+}
+
+?>
+        </ul>
     </article>
-    
-                <h3 class="heading">ホームページサンプル</h3>
-    <article>
-                        <ul>
-                                <li><a href="subpage.html">環境への取り組みについての説明ページです</a></li>
-                                <li><a href="subpage.html">ecoキャンペーン開催中です</a></li>
-                                <li><a href="subpage.html">オフィスの移転に関して</a></li>
-                                <li><a href="subpage.html">最新商品のご紹介</a></li>
-                                <li><a href="subpage.html">新規サービスを開始しました</a></li>
-                                <li><a href="subpage.html">環境賞受賞に関してはこちらをご確認ください</a></li>
-                        </ul>
-     </article>
-    
-                <h3 class="heading">ホームページサンプル</h3>
-                <article>
-                        <ul class="list">
-                                <li><a href="subpage.html"><img src="images/thumb1.jpg" width="42" height="42" alt=""></a>サンプル株式会社では最新技術と自然との調和を目指します。</li>
-                                <li><a href="subpage.html"><img src="images/thumb2.jpg" width="42" height="42" alt=""></a>サンプル株式会社では最新技術と自然との調和を目指します。</li>
-                                <li><a href="subpage.html"><img src="images/thumb3.jpg" width="42" height="42" alt=""></a>サンプル株式会社では最新技術と自然との調和を目指します。</li>
-      </ul> 
-                </article>
-    
         </aside>
  
 </div>

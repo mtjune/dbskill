@@ -97,18 +97,7 @@ mysql_free_result($res);
 ?>
         </table>
         </article>
-    </section>
-    
-    <section class="content">
-                        <h3 class="heading">ホームページサンプル株式会社の取り組み</h3>
-      <article>
-                          <img src="images/sample2.jpg" width="190" height="140" alt="" class="alignleft border" />
-                                <p>革新的な技術で世の中を動かす企業を目指します。ホームページサンプル株式会社では最新技術と自然との調和を目指します。革新的な技術で世の中を動かす企業を目指します。</p>
-                                <p>ホームページサンプル株式会社では最新技術と自然との調和を目指します。革新的な技術で世の中を動かす企業を目指します。ホームページサンプル株式会社では最新技術と自然との調和を目指します。革新的な技術で世の中を動かす。革新的な技術で世の中を動かす。</p>
-      </article>
-                </section>
-    
-        
+    </section>    
         <!-- / コンテンツ -->
 
         <aside id="sidebar">

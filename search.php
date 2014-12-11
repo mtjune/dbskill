@@ -81,7 +81,7 @@ $res = mysql_query($sql, $conn);
   <!-- コンテンツ -->
 	<section id="main">    
     <section class="content">
-    	<h3 class="heading">ホームページサンプル株式会社の取り組み</h3>
+    	<h3 class="heading">検索結果</h3>
 <?php
 
 while($row = mysql_fetch_assoc($res)){
@@ -96,62 +96,7 @@ while($row = mysql_fetch_assoc($res)){
 mysql_free_result($res);
 
 ?>
-    </section>
-    
-    <section class="content">
-			<h3 class="heading">ホームページサンプル株式会社の取り組み</h3>
-      <article>
-			  <img src="images/sample2.jpg" width="190" height="140" alt="" class="alignleft border" />
-				<p>革新的な技術で世の中を動かす企業を目指します。ホームページサンプル株式会社では最新技術と自然との調和を目指します。革新的な技術で世の中を動かす企業を目指します。</p>
-				<p>ホームページサンプル株式会社では最新技術と自然との調和を目指します。革新的な技術で世の中を動かす企業を目指します。ホームページサンプル株式会社では最新技術と自然との調和を目指します。革新的な技術で世の中を動かす。革新的な技術で世の中を動かす。</p>
-      </article>
-		</section>
-    
-		<section class="content">
-			<h3 class="heading">会社概要</h3>
-      <article>
-				<table class="table">
-				<tr>
-					<th>会社名</th>
-					<td>ホームページサンプル株式会社（英語表記 Homepage sample Inc.）</td>
-				</tr>
-				<tr>
-					<th>設立</th>
-					<td>平成10年1月10日</td>
-				</tr>
-				<tr>
-					<th>事業内容</th>
-					<td>IT・マーケティング・福祉など</td>
-				</tr>
-				<tr>
-					<th>住所</th>
-					<td>〒012-3456 見本県見本市サンプル1-2</td>
-				</tr>
-				<tr>
-					<th>電話番号</th>
-					<td>0123-4567-89012</td>
-				</tr>
-				<tr>
-					<th>メールアドレス</th>
-					<td>info@example.com</td>
-				</tr>
-				</table>
-    	</article>
-		</section>
-    
-    <section class="content" id="gallery">
-			<h3 class="heading">写真ギャラリー</h3>
-				<article>
-					<figure class="grid"><a href="subpage.html"><img src="images/gallery1.jpg" width="190" height="140" alt=""></a></figure>
-					<figure class="grid"><a href="subpage.html"><img src="images/gallery2.jpg" width="190" height="140" alt=""></a></figure>
-					<figure class="grid"><a href="subpage.html"><img src="images/gallery3.jpg" width="190" height="140" alt=""></a></figure>
-					<figure class="grid"><a href="subpage.html"><img src="images/gallery4.jpg" width="190" height="140" alt=""></a></figure>
-					<figure class="grid"><a href="subpage.html"><img src="images/gallery5.jpg" width="190" height="140" alt=""></a></figure>
-					<figure class="grid"><a href="subpage.html"><img src="images/gallery6.jpg" width="190" height="140" alt=""></a></figure>
-				</article>
-		</section>
-    
-	</section>
+    </section> 
 	<!-- / コンテンツ -->
 
 	<aside id="sidebar">

@@ -101,10 +101,10 @@ mysql_free_result($res);
 	<!-- / コンテンツ -->
 
 	<aside id="sidebar">
-	
+	<h3 class="heading">写真を探す</h3>
+		<article>
 		<form action="search.php" method="get">
 		<table>
-			<tr><td>写真を探す</td></tr>
 			<tr><td><input type="text" name="word"></td><td><input type="submit" value="検索"></td></tr>
 		</table>
 		<table>
@@ -122,6 +122,7 @@ mysql_free_result($res);
 			</tr>
 		</table>
 		</form>
+		</article>
 
        
 		<h3 class="heading">革新的な技術</h3>

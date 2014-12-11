@@ -114,9 +114,33 @@ while($row = mysql_fetch_assoc($res)){
         $tag = $row['tag_name'];
         print("<li><a href='search.php?search_mode=tag&word=$tag'>$tag</a></li>");
 }
+mysql_free_result($res);
 
 ?>
         </ul>
+    </article>
+
+    <h3 class="heading">タグを付ける</h3>
+    <article>
+            <form action="search.php" method="get">
+            <select name="tag_name">
+                    <option value="new_tag">新しいタグを付ける</option>
+
+<?php
+$sql = "select name from tags;";
+$res = mysql_query($sql, $conn);
+while($row = mysql_fetch_assoc($res)){
+        $tag = $row['name'];
+        print("<option value='$tag'>$tag</option>");
+}
+mysql_free_result($res);
+?>
+
+            </select>
+               新しいタグ<input type="text" name="new_tag_name"><br>
+               <input type="submit" value="追加">
+                </form>
+
     </article>
         </aside>
  

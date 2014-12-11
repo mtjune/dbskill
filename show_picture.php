@@ -7,7 +7,7 @@ mysql_select_db("s1413137", $conn);
 mysql_set_charset("utf8");
 
 $pic_id = $_GET['pic_id'];
-$sql = "select pics.title as title, pics.file_name as file_name, pics.remarks as remarks, pics.post_date as post_date from pics, users where pics.user_id = users.id and pics.id = '$pic_id';";
+$sql = "select users.name as user_name pics.title as title, pics.file_name as file_name, pics.remarks as remarks, pics.post_date as post_date from pics, users where pics.user_id = users.id and pics.id = '$pic_id';";
 
 $res = mysql_query($sql, $conn);
 $row = mysql_fetch_assoc($res);
@@ -16,7 +16,7 @@ $pic_title = $row['title'];
 $pic_filename = $row['file_name'];
 $pic_remarks = $row['remarks'];
 $pic_post_date = $row['post_date'];
-$pic_user_name = $row['name'];
+$pic_user_name = $row['user_name'];
 
 mysql_free_result($res);
 ?>
@@ -83,7 +83,7 @@ mysql_free_result($res);
         <h3 class="heading">ホームページサンプル株式会社の取り組み</h3>
         <article>
 <?php
-        print("<img src='$pic_file_name' width='600'  alt='$pic_title' class='alignright border' />");
+        print("<img src='$pic_filename' width='600'  alt='$pic_title' class='alignright border' />");
         
 ?>
         </article>

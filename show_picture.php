@@ -132,40 +132,6 @@ while($row = mysql_fetch_assoc($res)){
  
 </div>
  
-<!-- フッター -->
-<footer id="footer">
-        <div class="inner">
-        <!-- 左側 -->
-                <div id="info" class="grid">
-                        <!-- ロゴ -->
-                        <div class="logo">
-                                <a href="index.html"><img src="images/logo.png" width="45" height="45" alt="Sample site"><p>Company Name<br><span>Your Company Slogan</span></p></a>
-                        </div>
-                        <!-- / ロゴ -->
-                        <!-- 電話番号+受付時間 -->
-                        <div class="info">
-                                <p class="tel"><span>電話:</span> 012-3456-7890</p>
-                                <p class="open">受付時間: 平日 AM 10:00 〜 PM 5:00</p>
-                        </div>
-                        <!-- / 電話番号+受付時間 -->
-                </div>  
-                <!-- / 左側 -->
-                <!-- 右側 ナビゲーション -->
-                <ul class="footnav">
-                        <li><a href="subpage.html">eco・環境事業</a></li>
-                        <li><a href="subpage.html">コンピュータ事業</a></li>
-                        <li><a href="subpage.html">飲食店事業</a></li>
-                        <li><a href="subpage.html">介護・医療事業</a></li>
-                        <li><a href="subpage.html">ごあいさつ</a></li>
-                        <li><a href="subpage.html">サービス概要</a></li>
-                        <li><a href="subpage.html">会社情報</a></li>
-                        <li><a href="subpage.html">お問い合わせ</a></li>
-                        <li><a href="subpage.html">サイトマップ</a></li>
-                </ul>
-                <!-- / 右側 ナビゲーション -->
-        </div>
-</footer>
-<!-- / フッター -->
 <address>Copyright(c) 2013 Sample Inc. All Rights Reserved. Design by <a href="http://f-tpl.com" target="_blank" rel="nofollow">http://f-tpl.com</a></address>
 
 </body>

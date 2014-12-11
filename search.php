@@ -85,13 +85,13 @@ $res = mysql_query($sql, $conn);
 <?php
 
 while($row = mysql_fetch_assoc($res)){
-	print("<article>");
+	print("<section class='content'><article>");
 	print("<a href='show_picture.php?pic_id=".$row['pic_id']."'><img src='".$row['file_name']."' width='190' height='140' alt='".$row['title']."' class='alignleft border' /></a>");
 	print("<p></p>");
 	print("<p><h3>".$row['title']."</h3></p>");
 	print("<p></p>");
 	print("<p><h4>	:".$row['user_name']."</h4></p>");
-	print("</article");
+	print("</section></article");
 }
 mysql_free_result($res);
 

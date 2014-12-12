@@ -14,8 +14,7 @@ create table users(
 );
 
 create table tags(
-	name varchar(20) primary key,
-	number int
+	name varchar(20) primary key
 );
 
 create table evaluations(

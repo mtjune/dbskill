@@ -1,26 +1,3 @@
-<html>
-<head>
-<title>Phorm</title>
-<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-<h1>写真投稿</h1>
-
-<p>
-<form action="picpost.php" method="post" enctype="multipart/form-data">
-<table>
-<tr><td>タイトル</td><td><input type="text" name="pic_title"></td></tr>
-<tr><td>備考</td><td><input type="text" name="pic_remarks"></td></tr>
-<tr><td>ファイル</td><td><input type="file" name="file_up"></td></tr>
-</table>
-<input type="submit" value="投稿" />
-</form>
-</p>
-
-</body>
-</html>
-
-
 <?php
 session_start();
 $is_login = isset($_SESSION["user_id"]);
@@ -126,14 +103,6 @@ if($is_login){
 }
 
 ?>
-<h3 class="heading">ユーザ登録フォーム</h3>
-<article>
-<form action="signup.php" method="post"><table>
-<tr><td>ユーザID</td><td><input type="text" name="user_id" maxlength="16"></td></tr>
-<tr><td>パスワード</td><td><input type="password" name="user_pass" maxlength="16"></td></tr>
-<tr><td>ユーザ名</td><td><input type="text" name="user_name" maxlength="16"></td></tr>
-</table><input type="submit" value="登録" /></form>
-</article>
 </section>
     </section>
         <!-- / コンテンツ -->

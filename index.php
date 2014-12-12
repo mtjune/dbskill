@@ -40,7 +40,7 @@ mysql_set_charset("utf8");
 <?php
 if(!isset($_SESSION["user_id"])){
     print("<form action='login.php' method='post'>");
-    print("<table><tr><td>ユーザID</td><td><input type='text' name='login_user_id'></td></tr><tr><td>パスワード</td><td><input type='password' name='login_user_pass'></td></tr><tr><td colspan='2'><input type='submit' vlue='ログイン'><td></tr></table>");
+    print("<table><tr><td>ユーザID</td><td><input type='text' name='login_user_id'></td></tr><tr><td>パスワード</td><td><input type='password' name='login_user_pass'></td></tr><tr><td colspan='2'><input type='submit' value='ログイン'><td></tr></table>");
     print("</form>");
 } else {
     $login_user_id = $_SESSION['user_id'];
@@ -64,7 +64,7 @@ if(!isset($_SESSION["user_id"])){
     <a class="menu" id="menu"><span>MENU</span></a>
         <div class="panel">   
         <ul>
-            <li class="active"><a href="index.html"><strong>トップページ</strong><span>Top</span></a></li>
+            <li class="active"><a href="index.php"><strong>トップページ</strong><span>Top</span></a></li>
                 <li><a href="subpage.html"><strong>ブックマーク新着</strong><span>Bookmark</span></a></li>
                 <li><a href="get_pics.php"><strong>ユーザーページ</strong><span>User Page</span></a></li>
                 <li><a href="picpost_form.html"><strong>写真投稿</strong><span>Photo Post</span></a></li>

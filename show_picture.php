@@ -129,7 +129,7 @@ $sql = "select tag_name from additions where additions.pic_id = '$pic_id';";
 $res = mysql_query($sql, $conn);
 while($row = mysql_fetch_assoc($res)){
         $tag = $row['tag_name'];
-        print("<li><a href='search.php?search_mode=tag&word=$tag'>$tag</a><form action='bookmark.php' method='post'><input type='hidden' name='tag_name' value='$tag'><input type='submit' value='ブックマーク'></form><form action='tag_del.php' method='post'><input type='hidden' name='tag_name' value='$tag'><input type='submit' value='削除'></form></li>");
+        print("<li><a href='search.php?search_mode=tag&word=$tag'>$tag</a><form action='bookmark.php' method='post'><input type='hidden' name='tag_name' value='$tag'><input type='submit' value='ブックマーク'></form><form action='tag_del.php' method='post'><input type='hidden' name='tag_name' value='$tag'><input type='hidden' name='pic_id' value='$pic_id'><input type='submit' value='削除'></form></li>");
 }
 mysql_free_result($res);
 

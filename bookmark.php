@@ -30,7 +30,7 @@ if($is_login){
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, user-scalable=yes, maximum-scale=1.0, minimum-scale=1.0">
-<title><?php print($pic_title) ?> - Phorm</title>
+<title>ブックマーク追加 - Phorm</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <link rel="stylesheet" href="style.css" type="text/css" media="screen">

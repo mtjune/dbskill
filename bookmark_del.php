@@ -20,7 +20,7 @@ if($is_login){
 
 $tag_name = $_POST['tag_name'];
 if($is_login){
-    $sql = "insert into bookmarks values('$login_user_id', '$tag_name')";
+    $sql = "delete from bookmarks where user_id = '$login_user_id' and tag_name = '$tag_name'";
     $is_suc = mysql_query($sql, $conn);
 }
 ?>
@@ -93,9 +93,9 @@ if(!$is_login){
 <?php
 if($is_login){
     print("<section class='content'>\n");
-    print("<h3 class='heading'>ブックマーク</h3>\n");
+    print("<h3 class='heading'>ブックマーク削除</h3>\n");
     print("<article>\n");
-    print("タグ「".$tag_name."」をブックマークしました。\n");
+    print("タグ「".$tag_name."」のブックマークを削除しました。\n");
     print("</article>\n");
     print("</section>\n");
 }else{

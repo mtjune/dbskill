@@ -50,7 +50,7 @@ if($is_login){
 <?php
 if(!$is_login){
     print("<form action='login.php' method='post'>");
-    print("<table><tr><td>ユーザID</td><td><input type='text' name='login_user_id'></td></tr><tr><td>パスワード</td><td><input type='password' name='login_user_pass'></td></tr><tr><td colspan='2'><input type='submit' value='ログイン'>もしくは<a href='signup_form.php'>ユーザ登録</a><td></tr></table>");
+    print("<table><tr><td>ユーザID</td><td><input type='text' name='login_user_id'></td></tr><tr><td>パスワード</td><td><input type='password' name='login_user_pass'></td></tr><tr><td colspan='2'><input type='submit' value='ログイン'>もしくは<strong><a href='signup_form.php'>ユーザ登録</a></strong><td></tr></table>");
     print("</form>");
 } else {
     $sql = "select name from users where id = '$login_user_id'";

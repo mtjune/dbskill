@@ -45,14 +45,12 @@ if(!$is_login){
     print("</form>");
 } else {
     $login_user_id = $_SESSION['user_id'];
-    $sql = "select name from users where id = '$login_user_id'";
-    $res = mysql_query($sql, $conn);
+    $res = mysql_query("select name from users where id = '$login_user_id'");
     $row = mysql_fetch_assoc($res);
     $login_user_name = $row['name'];
-
+    mysql_free_result($res);
     print("<p class='tel'><span>ログインユーザ:</span> $login_user_name</p>");
     print("<p class='open'><form action='logout.php' method='post'><input type='submit' value='ログアウト'></form></p>");
-    mysql_free_result($res);
 }
 ?>
     </div>

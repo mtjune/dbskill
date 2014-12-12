@@ -1,7 +1,5 @@
 <?php
 session_start();
-$is_login = isset($_SESSION["user_id"]);
-
 $host = "localhost";
 if(!$conn = mysql_connect($host, "s1413137", "s1413137hoge")){
         die("MySQL接続エラー.<br />");
@@ -28,6 +26,7 @@ if(mysql_num_rows($res) == 0){
     $login_result = 2;
 }
 
+$is_login = isset($_SESSION["user_id"]);
 if($is_login){
     $login_user_id = $_SESSION['user_id'];
     $res = mysql_query("select name from users where id = '$login_user_id'");

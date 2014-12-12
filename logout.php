@@ -1,6 +1,5 @@
 <?php
 session_start();
-$is_login = isset($_SESSION["user_id"]);
 
 $host = "localhost";
 if(!$conn = mysql_connect($host, "s1413137", "s1413137hoge")){
@@ -16,6 +15,7 @@ if (isset($_COOKIE["PHPSESSID"])) {
 }
 session_destroy();
 
+$is_login = isset($_SESSION["user_id"]);
 if($is_login){
     $login_user_id = $_SESSION['user_id'];
     $res = mysql_query("select name from users where id = '$login_user_id'");

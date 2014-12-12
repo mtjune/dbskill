@@ -65,7 +65,7 @@ if(!isset($_SESSION["user_id"])){
     print("</form>");
 } else {
     $login_user_id = $_SESSION['user_id'];
-    $sql = "select name from users where id = '$loginuser_id'";
+    $sql = "select name from users where id = '$login_user_id'";
     $res = mysql_query($sql, $conn);
     $row = mysql_fetch_assoc($res);
     $login_user_name = $row['name'];

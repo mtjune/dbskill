@@ -11,8 +11,7 @@ mysql_set_charset("utf8");
 
 if($is_login){
     $login_user_id = $_SESSION['user_id'];
-    mysql_query("select name from users where id = '$login_user_id'");
-    $res = mysql_query($sql, $conn);
+    $res = mysql_query("select name from users where id = '$login_user_id'");
     $row = mysql_fetch_assoc($res);
     $login_user_name = $row['name'];
     mysql_free_result($res);

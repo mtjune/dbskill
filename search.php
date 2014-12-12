@@ -13,11 +13,11 @@ $mode = $_GET['search_mode'];
 $word = $_GET['word'];
 
 if($mode == "keyword"){
-	$sql = "select pics.id as pic_id, pics.title as title, pics.file_name as file_name, users.name as user_name from pics, additions, users where users.id = pics.user_id and ((pics.title like '%$word%') or (pics.remarks like '%$word%') or (pics.id = additions.pic_id and additions.tag_name like '%$word%'));";
+	$sql = "select distinct pics.id as pic_id, pics.title as title, pics.file_name as file_name, users.name as user_name from pics, additions, users where users.id = pics.user_id and ((pics.title like '%$word%') or (pics.remarks like '%$word%') or (pics.id = additions.pic_id and additions.tag_name like '%$word%'));";
 } else if($mode == "title"){
-	$sql = "select pics.id as pic_id, pics.title as title, pics.file_name as file_name, users.name as user_name from pics, users where users.id = pics.user_id and pics.title like '%$word%';";
+	$sql = "select distinct pics.id as pic_id, pics.title as title, pics.file_name as file_name, users.name as user_name from pics, users where users.id = pics.user_id and pics.title like '%$word%';";
 } else if($mode == "tag"){
-	$sql = "select pics.id as pic_id, pics.title as title, pics.file_name as file_name, users.name as user_name from pics, additions, users where users.id = pics.user_id and pics.id = additions.pic_id and additions.tag_name like '%$word%';";
+	$sql = "select distinct pics.id as pic_id, pics.title as title, pics.file_name as file_name, users.name as user_name from pics, additions, users where users.id = pics.user_id and pics.id = additions.pic_id and additions.tag_name like '%$word%';";
 }
 
 $res = mysql_query($sql, $conn);

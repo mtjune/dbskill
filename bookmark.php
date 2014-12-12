@@ -20,6 +20,7 @@ if($is_login){
 $tag_name = $_POST['tag_name'];
 if($is_login){
     $sql = "insert into bookmarks value('$login_user_id', '$tag_name')";
+    echo $sql;
 }
 
 

@@ -15,6 +15,7 @@ if($is_login){
     $res = mysql_query($sql, $conn);
     $row = mysql_fetch_assoc($res);
     $login_user_name = $row['name'];
+    mysql_free_result($res);
 }
 ?>
 

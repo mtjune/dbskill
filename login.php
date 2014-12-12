@@ -53,7 +53,7 @@ if(mysql_num_rows($res) == 0){
   
   <!-- ロゴ -->
     <div class="logo">
-        <a href="index.html"><img src="images/Phorm_top_logo.png" width="45" height="45" alt="Sample site" /></a>
+        <a href="index.php"><img src="images/Phorm_top_logo.png" width="45" height="45" alt="Sample site" /></a>
     </div>
     <!-- / ロゴ -->
     <!-- 電話番号+受付時間 -->

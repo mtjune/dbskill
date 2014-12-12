@@ -24,6 +24,7 @@ $flag2 = false;
 
 if($tag_name == "new_tag"){
     $sql = "insert into tags value('$new_tag_name')";
+    mysql_query($sql, $conn);
 
     $sql = "insert into additions value('$new_tag_name', $pic_id)";
     $flag1 = mysql_query($sql, $conn);

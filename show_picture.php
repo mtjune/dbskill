@@ -7,7 +7,7 @@ mysql_select_db("s1413137", $conn);
 mysql_set_charset("utf8");
 
 $pic_id = $_GET['pic_id'];
-$sql = "select users.name as user_name, pics.title as title, pics.file_name as file_name, pics.remarks as remarks, pics.post_date as post_date from pics, users where pics.user_id = users.id and pics.id = '$pic_id';";
+$sql = "select users.name as user_name, pics.title as title, pics.file_name as file_name, pics.remarks as remarks, pics.post_date as post_date from pics, users where pics.user_id = users.id and pics.id = '$pic_id'";
 
 $res = mysql_query($sql, $conn);
 $row = mysql_fetch_assoc($res);

@@ -23,14 +23,14 @@ $flag1 = false;
 $flag2 = false;
 
 if($tag_post == "new_tag"){
-    $sql = "insert into tags value('$new_tag_name');";
+    $sql = "insert into tags value('$new_tag_name')";
 
-    $sql = "insert into additions value('$new_tag_name', $pic_id);";
+    $sql = "insert into additions value('$new_tag_name', $pic_id)";
     $flag1 = mysql_query($sql, $conn);
 
     $to_show_tag_name = $new_tag_name;
 } else {
-    $sql = "insert into additions value('$tag_name', $pic_id)"
+    $sql = "insert into additions value('$tag_name', $pic_id)";
     $flag2 = mysql_query($sql, $conn);
     $to_show_tag_name = $tag_name;
 }

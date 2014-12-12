@@ -118,11 +118,11 @@ if($is_login){
 </table>
 <input type='submit' value='投稿' />
 </form>
-</article>")
+</article>");
 
 }else{
 	print("<h3 class='heading'>ログインされていない</h3>");
-	print("<article>ログインしていません、右上のログインフォームからログインしてください。</article");
+	print("<article>ログインしていません、右上のログインフォームからログインしてください。</article>");
 }
 
 ?>

@@ -128,48 +128,7 @@ if($is_login){
         <!-- / コンテンツ -->
 
         <aside id="sidebar">
-       
-                <h3 class="heading">タグ</h3>
-    <article>
-        <ul>
-<?php
-
-$sql = "select tag_name from additions where additions.pic_id = '$pic_id';";
-$res = mysql_query($sql, $conn);
-while($row = mysql_fetch_assoc($res)){
-        $tag = $row['tag_name'];
-        print("<li><a href='search.php?search_mode=tag&word=$tag'>$tag</a><form action='bookmark.php' method='post'><input type='hidden' name='tag_name' value='$tag'><input type='submit' value='ブックマーク'></form><form action='tag_del.php' method='post'><input type='hidden' name='tag_name' value='$tag'><input type='submit' value='削除'></form></li>");
-}
-mysql_free_result($res);
-
-?>
-        </ul>
-    </article>
-
-    <h3 class="heading">タグを付ける</h3>
-    <article>
-            <form action="tag_add.php" method="post">
-            <?php print("<input type='hidden' name='pic_id' value='$pic_id' />"); ?>
-            <select name="tag_name">
-                    <option value="新しいタグを付ける">新しいタグを付ける</option>
-
-<?php
-$sql = "select name from tags;";
-$res = mysql_query($sql, $conn);
-while($row = mysql_fetch_assoc($res)){
-        $tag = $row['name'];
-        print("<option value='$tag'>$tag</option>");
-}
-mysql_free_result($res);
-?>
-
-            </select>
-            <br>
-               新しいタグ<input type="text" name="new_tag_name"><br>
-               <input type="submit" value="追加">
-                </form>
-
-    </article>
+        
         </aside>
  
 </div>

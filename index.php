@@ -111,7 +111,28 @@ if(!isset($_SESSION["user_id"])){
 
   
 </div>
- 
+ <!-- フッター -->
+<footer id="footer">
+    <div class="inner">
+    <!-- 左側 -->
+        <div id="info" class="grid">
+            <!-- ロゴ -->
+            
+            <!-- / ロゴ -->
+            <!-- 電話番号+受付時間 -->
+            <div class="info">
+                <p class="tel"><span>作成者:</span> 山田純也</p>
+                <p class="open">学籍番号: 201413137</p>
+            </div>
+            <!-- / 電話番号+受付時間 -->
+        </div>  
+        <!-- / 左側 -->
+        <!-- 右側 ナビゲーション -->
+        
+        <!-- / 右側 ナビゲーション -->
+    </div>
+</footer>
+<!-- / フッター -->
 <address>Copyright(c) 2013 Sample Inc. All Rights Reserved. Design by <a href="http://f-tpl.com" target="_blank" rel="nofollow">http://f-tpl.com</a></address>
 
 </body>

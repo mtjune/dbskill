@@ -73,7 +73,6 @@ if(!$is_login){
 } else {
     print("<p class='tel'><span>ログインユーザ:</span> $login_user_name</p>");
     print("<p class='open'><form action='logout.php' method='post'><input type='submit' value='ログアウト'></form></p>");
-    mysql_free_result($res);
 }
 ?>
     </div>

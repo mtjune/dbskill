@@ -65,13 +65,13 @@ if(!$is_login){
     <a class="menu" id="menu"><span>MENU</span></a>
         <div class="panel">   
         <ul>
-            <li class="active"><a href="index.php"><strong>トップページ</strong><span>Top</span></a></li>
-                <li><a href="subpage.html"><strong>ブックマーク新着</strong><span>Bookmark</span></a></li>
-                <li><a href="userpage.php"><strong>ユーザーページ</strong><span>User Page</span></a></li>
-                <li><a href="picpost_form.html"><strong>写真投稿</strong><span>Photo Post</span></a></li>
-                <li><a href="signup_form.html"><strong>ユーザ登録</strong><span>Sign Up</span></a></li>
-                <li class="last"><a href="get_tables.php"><strong>全テーブルを表示</strong><span>Show Tables</span></a></li>
-            </ul>   
+            <li><a href="index.php"><strong>トップページ</strong><span>Top</span></a></li>
+            <li><a href="bookmark_new.php"><strong>ブックマーク新着</strong><span>Bookmark</span></a></li>
+            <li><a href="userpage.php"><strong>ユーザーページ</strong><span>User Page</span></a></li>
+            <li class="active"><a href="picpost_form.php"><strong>写真投稿</strong><span>Photo Post</span></a></li>
+            <li><a href="signup_form.php"><strong>ユーザ登録</strong><span>Sign Up</span></a></li>
+            <li class="last"><a href="get_tables.php"><strong>全テーブルを表示</strong><span>Show Tables</span></a></li>
+        </ul>
     </div>
     </div> 
 </nav>

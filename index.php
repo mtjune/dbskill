@@ -18,7 +18,6 @@ if($is_login){
     mysql_free_result($res);
 }
 ?>
-
 <!DOCTYPE html>
 <html dir="ltr" lang="ja">
 <head>
@@ -53,11 +52,6 @@ if(!$is_login){
     print("<table><tr><td>ユーザID</td><td><input type='text' name='login_user_id'></td></tr><tr><td>パスワード</td><td><input type='password' name='login_user_pass'></td></tr><tr><td colspan='2'><input type='submit' value='ログイン'><td></tr></table>");
     print("</form>");
 } else {
-    $sql = "select name from users where id = '$login_user_id'";
-    $res = mysql_query($sql, $conn);
-    $row = mysql_fetch_assoc($res);
-    $login_user_name = $row['name'];
-
     print("<p class='tel'><span>ログインユーザ:</span> $login_user_name</p>");
     print("<p class='open'><form action='logout.php' method='post'><input type='submit' value='ログアウト'></form></p>");
     mysql_free_result($res);
@@ -74,12 +68,12 @@ if(!$is_login){
         <div class="panel">   
         <ul>
             <li class="active"><a href="index.php"><strong>トップページ</strong><span>Top</span></a></li>
-                <li><a href="bookmark_new.php"><strong>ブックマーク新着</strong><span>Bookmark</span></a></li>
-                <li><a href="userpage.php"><strong>ユーザーページ</strong><span>User Page</span></a></li>
-                <li><a href="picpost_form.php"><strong>写真投稿</strong><span>Photo Post</span></a></li>
-                <li><a href="signup_form.php"><strong>ユーザ登録</strong><span>Sign Up</span></a></li>
-                <li class="last"><a href="get_tables.php"><strong>全テーブルを表示</strong><span>Show Tables</span></a></li>
-            </ul>   
+            <li><a href="bookmark_new.php"><strong>ブックマーク新着</strong><span>Bookmark</span></a></li>
+            <li><a href="userpage.php"><strong>ユーザーページ</strong><span>User Page</span></a></li>
+            <li><a href="picpost_form.php"><strong>写真投稿</strong><span>Photo Post</span></a></li>
+            <li><a href="signup_form.php"><strong>ユーザ登録</strong><span>Sign Up</span></a></li>
+            <li class="last"><a href="get_tables.php"><strong>全テーブルを表示</strong><span>Show Tables</span></a></li>
+        </ul>
     </div>
     </div> 
 </nav>

@@ -50,7 +50,7 @@ if($is_login){
 <?php
 if(!$is_login){
     print("<form action='login.php' method='post'>");
-    print("<table><tr><td>ユーザID</td><td><input type='text' name='login_user_id'></td></tr><tr><td>パスワード</td><td><input type='password' name='login_user_pass'></td></tr><tr><td colspan='2'><input type='submit' value='ログイン'><td></tr></table>");
+    print("<table><tr><td>ユーザID</td><td><input type='text' name='login_user_id'></td></tr><tr><td>パスワード</td><td><input type='password' name='login_user_pass'></td></tr><tr><td colspan='2'><input type='submit' value='ログイン'>もしくは<a href='signup_form.php'>ユーザ登録</a><td></tr></table>");
     print("</form>");
 } else {
     $sql = "select name from users where id = '$login_user_id'";
@@ -77,7 +77,6 @@ if(!$is_login){
                 <li><a href="bookmark_new.php"><strong>ブックマーク新着</strong><span>Bookmark</span></a></li>
                 <li><a href="userpage.php"><strong>ユーザーページ</strong><span>User Page</span></a></li>
                 <li><a href="picpost_form.php"><strong>写真投稿</strong><span>Photo Post</span></a></li>
-                <li><a href="signup_form.php"><strong>ユーザ登録</strong><span>Sign Up</span></a></li>
                 <li class="last"><a href="get_tables.php"><strong>全テーブルを表示</strong><span>Show Tables</span></a></li>
             </ul>   
     </div>

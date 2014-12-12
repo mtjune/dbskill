@@ -45,23 +45,23 @@ mysql_free_result($res);
 
 <body id="subpage">
 <header id="header">
-  <h1>写真投稿サイトです</h1>
+  <h1>Photos Posted Site.</h1>
   
   <!-- ロゴ -->
-        <div class="logo">
-                <a href="index.html"><img src="images/logo.png" width="45" height="45" alt="Sample site" /><p>Phorm<span>Photo Posted Site</span></p></a>
-        </div>
-        <!-- / ロゴ -->
-        <!-- 電話番号+受付時間 -->
-        <div class="info">
+    <div class="logo">
+        <a href="index.php"><img src="images/Phorm_top_logo.png" width="45" height="45" alt="Sample site" /></a>
+    </div>
+    <!-- / ロゴ -->
+    <!-- 電話番号+受付時間 -->
+    <div class="info">
 <?php
-if(!$is_login){
+if(!isset($_SESSION["user_id"])){
     print("<form action='login.php' method='post'>");
-    print("<table><tr><td>ユーザID</td><td><input type='text' name='login_user_id'></td></tr><tr><td>パスワード</td><td><input type='password' name='login_user_pass'></td></tr><tr><td colspan='2'><input type='submit' vlue='ログイン'><td></tr></table>");
+    print("<table><tr><td>ユーザID</td><td><input type='text' name='login_user_id'></td></tr><tr><td>パスワード</td><td><input type='password' name='login_user_pass'></td></tr><tr><td colspan='2'><input type='submit' value='ログイン'><td></tr></table>");
     print("</form>");
 } else {
     $login_user_id = $_SESSION['user_id'];
-    $sql = "select name from users where id = '$user_id'";
+    $sql = "select name from users where id = '$login_user_id'";
     $res = mysql_query($sql, $conn);
     $row = mysql_fetch_assoc($res);
     $login_user_name = $row['name'];
@@ -71,25 +71,25 @@ if(!$is_login){
     mysql_free_result($res);
 }
 ?>
-        </div>
-        <!-- / 電話番号+受付時間 -->
+    </div>
+    <!-- / 電話番号+受付時間 -->
 </header>
 
 <!-- メインナビゲーション -->
 <nav id="mainNav">
-        <div class="inner">
-        <a class="menu" id="menu"><span>MENU</span></a>
-                <div class="panel">   
+    <div class="inner">
+    <a class="menu" id="menu"><span>MENU</span></a>
+        <div class="panel">   
         <ul>
-                <li><a href="index.html"><strong>トップページ</strong><span>Top</span></a></li>
-                                <li><a href="subpage.html"><strong>ごあいさつ</strong><span>Greeting</span></a></li>
-                                <li><a href="subpage.html"><strong>サービス概要</strong><span>Service</span></a></li>
-                                <li><a href="subpage.html"><strong>弊社の取り組み</strong><span>Approach</span></a></li>
-                                <li><a href="subpage.html"><strong>会社情報</strong><span>Company</span></a></li>
-                                <li class="last"><a href="subpage.html"><strong>お問い合わせ</strong><span>Contact</span></a></li>
-                        </ul>   
+            <li class="active"><a href="index.php"><strong>トップページ</strong><span>Top</span></a></li>
+                <li><a href="subpage.html"><strong>ブックマーク新着</strong><span>Bookmark</span></a></li>
+                <li><a href="userpage.php"><strong>ユーザーページ</strong><span>User Page</span></a></li>
+                <li><a href="picpost_form.html"><strong>写真投稿</strong><span>Photo Post</span></a></li>
+                <li><a href="signup_form.html"><strong>ユーザ登録</strong><span>Sign Up</span></a></li>
+                <li class="last"><a href="get_tables.php"><strong>全テーブルを表示</strong><span>Show Tables</span></a></li>
+            </ul>   
     </div>
-        </div> 
+    </div> 
 </nav>
 <!-- / メインナビゲーション -->
 
@@ -99,29 +99,29 @@ if(!$is_login){
         <section id="main">
 <?php
 if($is_login){
-    print("<section class='content'>¥n");
-    print("<h3 class='heading'>ログイン情報</h3>¥n");
-    print("<article>¥n");
-    print("<table class='table'>¥n");
-    print("<tr><td>ユーザID</td><td>$login_user_id</td></tr>¥n");
-    print("<tr><td>ユーザ名</td><td>$login_user_name</td></tr>¥n");
-    print("</table>¥n");
-    print("</article>¥n");
-    print("</section>¥n");
+    print("<section class='content'>¥¥\n");
+    print("<h3 class='heading'>ログイン情報</h3>\n");
+    print("<article>\n");
+    print("<table class='table'>\n");
+    print("<tr><td>ユーザID</td><td>$login_user_id</td></tr>\n");
+    print("<tr><td>ユーザ名</td><td>$login_user_name</td></tr>\n");
+    print("</table>\n");
+    print("</article>\n");
+    print("</section>\n");
 
-    print("<section class='content'>¥n");
-    print("<h3 class='heading'>投稿写真</h3>¥n");
-    print("<article>¥n");
-    print("</article>¥n");
-    print("</section>¥n");
+    print("<section class='content'>\n");
+    print("<h3 class='heading'>投稿写真</h3>\n");
+    print("<article>\n");
+    print("</article>\n");
+    print("</section>\n");
 }else{
-    print("<section class='content'>¥n");
-    print("<h3 class='heading'>ログイン情報</h3>¥n");
-    print("<article>¥n");
-    print("右上のフォームでログインしてください。<br>¥n");
+    print("<section class='content'>\n");
+    print("<h3 class='heading'>ログイン情報</h3>\n");
+    print("<article>\n");
+    print("右上のフォームでログインしてください。<br>\n");
     print("ユーザ登録されてない方は, 上のメニューからユーザ登録をしてください");
-    print("</article>¥n");
-    print("</section>¥n");
+    print("</article>\n");
+    print("</section>\n");
 }
 ?>
     </section>

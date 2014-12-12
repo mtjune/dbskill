@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $host = "localhost";
 if(!$conn = mysql_connect($host, "s1413137", "s1413137hoge")){
         die("MySQL接続エラー.<br />");
@@ -7,33 +9,24 @@ if(!$conn = mysql_connect($host, "s1413137", "s1413137hoge")){
 mysql_select_db("s1413137", $conn);
 mysql_set_charset("utf8");
 
-$pic_id = $_POST['pic_id'];
-$tag_name = $_POST['tag_name'];
-$new_tag_name = $_POST['new_tag_name'];
+$login_user_id = $_POST['login_user_id'];
+$login_user_pass = $_POST['login_user_pass'];
 
-$sql = "select title from pics where id = '$pic_id'";
+$sql = "select * from users where id = '$login_user_id'";
 $res = mysql_query($sql, $conn);
 $row = mysql_fetch_assoc($res);
 
-$pic_title = $row['title'];
-
-mysql_free_result($res);
-
-$flag1 = false;
-$flag2 = false;
-
-if($tag_name == "new_tag"){
-    $sql = "insert into tags value('$new_tag_name')";
-    mysql_query($sql, $conn);
-
-    $sql = "insert into additions value('$new_tag_name', $pic_id)";
-    $flag1 = mysql_query($sql, $conn);
-
-    $to_show_tag_name = $new_tag_name;
-} else {
-    $sql = "insert into additions value('$tag_name', $pic_id)";
-    $flag2 = mysql_query($sql, $conn);
-    $to_show_tag_name = $tag_name;
+if(mysql_num_rows($res) == 0){
+    // IDが存在しない
+    $login_result = 1;
+}else if($row['pass'] === $login_user_pass){
+    // ログイン成功
+    $_SESSION['user_id'] = $login_user_id;
+    $login_result = 0;
+    $user_name = $row['name'];
+}else{
+    // パスが一致しない
+    $login_result = 2;
 }
 
 ?>
@@ -94,19 +87,25 @@ if($tag_name == "new_tag"){
   
   <!-- コンテンツ -->
         <section id="main">
-        
     <section class="content">
-        <h3 class="heading">「<?php print($pic_title); ?>」へタグ「<?php print($to_show_tag_name); ?>」を追加</h3>
+    <h3 class="heading">
+<?php
+    if($login_result === 0){
+        print("ログインに成功しました");
+    }else{
+        print("ログインに失敗しました");
+    }
+?>
+        </h3>
         <article>
 <?php 
-if(flag1 || flag2){
-    print("「".$to_show_tag_name."」タグを追加しました。<br>");
-} else {
-    print("「".$to_show_tag_name."」タグを追加出来ませんでした。<br>");
+if($login_result === 0){
+    print("ようこそ、$user_nameさん。<br>");
+}else if($login_result === 1){
+    print("ユーザIDが存在しません。<br>");
+}else{
+    print("パスワードが一致しません。<br>");
 }
-
-print("<br><br>");
-print("<a href='show_picture.php?pic_id=$pic_id'>「".$pic_title."」へ戻る</a>");
 
 ?>
         </article>

@@ -1,4 +1,8 @@
 <?php
+
+session_start();
+
+
 $host = "localhost";
 if(!$conn = mysql_connect($host, "s1413137", "s1413137hoge")){
         die("MySQL接続エラー.<br />");
@@ -19,6 +23,8 @@ $pic_post_date = $row['post_date'];
 $pic_user_name = $row['user_name'];
 
 mysql_free_result($res);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -49,8 +55,23 @@ mysql_free_result($res);
         <!-- / ロゴ -->
         <!-- 電話番号+受付時間 -->
         <div class="info">
-                <p class="tel"><span>作成者:</span> 山田純也</p>
-                <p class="open">学籍番号: 201413137</p>
+<?php
+if(!isset($_SESSION["user_id"])){
+    print("<form action='login.php' method='post'>");
+    print("<table><tr><td>ユーザID</td><td><input type='text' name='login_user_id'></td></tr><tr><td>パスワード</td><td><input type='password' name='login_user_pass'></td></tr><tr><td colspan='2'><input type='submit' vlue='ログイン'><td></tr></table>");
+    print("</form>");
+} else {
+    $login_user_id = $_SESSION['user_id'];
+    $sql = "select name from users where id = '$user_id'";
+    $res = mysql_query($sql, $conn);
+    $row = mysql_fetch_assoc($res);
+    $login_user_name = $row['name'];
+
+    print("<p class='tel'><span>ログインユーザ:</span> $login_user_name</p>");
+    print("<p class='open'><form action='logout.php' method='post'><input type='submit' value='ログアウト'></form></p>");
+    mysql_free_result($res);
+}
+?>
         </div>
         <!-- / 電話番号+受付時間 -->
 </header>

@@ -1,4 +1,5 @@
 <?php
+
 $host = "localhost";
 if(!$conn = mysql_connect($host, "s1413137", "s1413137hoge")){
         die("MySQL接続エラー.<br />");
@@ -6,19 +7,35 @@ if(!$conn = mysql_connect($host, "s1413137", "s1413137hoge")){
 mysql_select_db("s1413137", $conn);
 mysql_set_charset("utf8");
 
-$pic_id = $_GET['pic_id'];
-$sql = "select users.name as user_name, pics.title as title, pics.file_name as file_name, pics.remarks as remarks, pics.post_date as post_date from pics, users where pics.user_id = users.id and pics.id = '$pic_id'";
+$pic_id = $_POST['pic_id'];
+$tag_name = $_POST['tag_name'];
+$new_tag_name = $_POST['new_tag_name'];
 
+$sql = "select title from pics where id = '$pic_id'";
 $res = mysql_query($sql, $conn);
 $row = mysql_fetch_assoc($res);
 
 $pic_title = $row['title'];
-$pic_filename = $row['file_name'];
-$pic_remarks = $row['remarks'];
-$pic_post_date = $row['post_date'];
-$pic_user_name = $row['user_name'];
 
 mysql_free_result($res);
+
+$flag1 = false;
+$flag2 = false;
+
+if($tag_name == "新しいタグを付ける"){
+    $sql = "insert into tags value('$new_tag_name')";
+    mysql_query($sql, $conn);
+
+    $sql = "insert into additions value('$new_tag_name', $pic_id)";
+    $flag1 = mysql_query($sql, $conn);
+
+    $to_show_tag_name = $new_tag_name;
+} else {
+    $sql = "insert into additions value('$tag_name', $pic_id)";
+    $flag2 = mysql_query($sql, $conn);
+    $to_show_tag_name = $tag_name;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -77,73 +94,28 @@ mysql_free_result($res);
   
   <!-- コンテンツ -->
         <section id="main">
-  
-    
-    <section class="content">
-        <h3 class="heading"><?php print($pic_title) ?></h3>
-        <article>
-<?php
-        print("<img src='$pic_filename' width='600' alt='$pic_title' class='alignright border' />");
         
-?>
-        </article>
+    <section class="content">
+        <h3 class="heading">「<?php print($pic_title); ?>」へタグ「<?php print($to_show_tag_name); ?>」を追加</h3>
         <article>
-        <table class="table">   
-<?php
-        print("<tr><th>タイトル</th><td>$pic_title</td></tr>");
-        print("<tr><th>投稿者</th><td>$pic_user_name</td></tr>");
-        print("<tr><th>投稿日</th><td>$pic_post_date</td></tr>");
-        print("<tr><th>備考</th><td>$pic_remarks</td></tr>");
+<?php 
+if(flag1 || flag2){
+    print("「".$to_show_tag_name."」タグを追加しました。<br>");
+} else {
+    print("「".$to_show_tag_name."」タグを追加出来ませんでした。<br>");
+}
+
+print("<br><br>");
+print("<a href='show_picture.php?pic_id=$pic_id'>「".$pic_title."」へ戻る</a>");
+
 ?>
-        </table>
         </article>
     </section>
     </section>
         <!-- / コンテンツ -->
 
         <aside id="sidebar">
-       
-                <h3 class="heading">タグ</h3>
-    <article>
-        <ul>
-<?php
 
-$sql = "select tag_name from additions where additions.pic_id = '$pic_id';";
-$res = mysql_query($sql, $conn);
-while($row = mysql_fetch_assoc($res)){
-        $tag = $row['tag_name'];
-        print("<li><a href='search.php?search_mode=tag&word=$tag'>$tag</a><form action='bookmark.php' method='post'><input type='hidden' name='tag_name' value='$tag'><input type='submit' value='ブックマーク'></form><form action='tag_del.php' method='post'><input type='hidden' name='tag_name' value='$tag'><input type='submit' value='削除'></form></li>");
-}
-mysql_free_result($res);
-
-?>
-        </ul>
-    </article>
-
-    <h3 class="heading">タグを付ける</h3>
-    <article>
-            <form action="tag_add.php" method="post">
-            <?php print("<input type='hidden' name='pic_id' value='$pic_id' />"); ?>
-            <select name="tag_name">
-                    <option value="新しいタグを付ける">新しいタグを付ける</option>
-
-<?php
-$sql = "select name from tags;";
-$res = mysql_query($sql, $conn);
-while($row = mysql_fetch_assoc($res)){
-        $tag = $row['name'];
-        print("<option value='$tag'>$tag</option>");
-}
-mysql_free_result($res);
-?>
-
-            </select>
-            <br>
-               新しいタグ<input type="text" name="new_tag_name"><br>
-               <input type="submit" value="追加">
-                </form>
-
-    </article>
         </aside>
  
 </div>

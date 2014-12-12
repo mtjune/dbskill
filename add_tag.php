@@ -97,7 +97,7 @@ if($tag_name == "new_tag"){
     <section class="content">
         <h3 class="heading">「<?php print($pic_title); ?>」へタグ「<?php print($to_show_tag_name); ?>」を追加</h3>
         <article>
-<<?php 
+<?php 
 if(flag1 || flag2){
     print("「".$to_show_tag_name."」タグを追加しました。<br>");
 } else {
@@ -105,7 +105,7 @@ if(flag1 || flag2){
 }
 
 print("<br><br>");
-print("<a href='show_picture.php?pic_id=$pic_id'>「$pic_title」へ戻る</a>");
+print("<a href='show_picture.php?pic_id=$pic_id'>「".$pic_title."」へ戻る</a>");
 
 ?>
         </article>

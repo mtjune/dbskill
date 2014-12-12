@@ -159,7 +159,8 @@ mysql_free_result($res);
 
             </select>
             <br>
-               新しいタグ<input type="text" name="new_tag_name"><br>
+               新しいタグ<br>
+               <input type="text" name="new_tag_name"><br>
                <input type="submit" value="追加">
                 </form>
 

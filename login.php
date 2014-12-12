@@ -59,21 +59,15 @@ if(mysql_num_rows($res) == 0){
     <!-- 電話番号+受付時間 -->
     <div class="info">
 <?php
-if(!$is_login){
-    print("<form action='login.php' method='post'>");
-    print("<table><tr><td>ユーザID</td><td><input type='text' name='login_user_id'></td></tr><tr><td>パスワード</td><td><input type='password' name='login_user_pass'></td></tr><tr><td colspan='2'><input type='submit' value='ログイン'><td></tr></table>");
-    print("</form>");
-} else {
-    $login_user_id = $_SESSION['user_id'];
-    $sql = "select name from users where id = '$login_user_id'";
-    $res = mysql_query($sql, $conn);
-    $row = mysql_fetch_assoc($res);
-    $login_user_name = $row['name'];
+$login_user_id = $_SESSION['user_id'];
+$sql = "select name from users where id = '$login_user_id'";
+$res = mysql_query($sql, $conn);
+$row = mysql_fetch_assoc($res);
+$login_user_name = $row['name'];
 
-    print("<p class='tel'><span>ログインユーザ:</span> $login_user_name</p>");
-    print("<p class='open'><form action='logout.php' method='post'><input type='submit' value='ログアウト'></form></p>");
-    mysql_free_result($res);
-}
+print("<p class='tel'><span>ログインユーザ:</span> $login_user_name</p>");
+print("<p class='open'><form action='logout.php' method='post'><input type='submit' value='ログアウト'></form></p>");
+mysql_free_result($res);
 ?>
     </div>
     <!-- / 電話番号+受付時間 -->

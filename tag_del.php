@@ -1,4 +1,6 @@
 <?php
+session_start();
+$is_login = isset($_SESSION["user_id"]);
 
 $host = "localhost";
 if(!$conn = mysql_connect($host, "s1413137", "s1413137hoge")){
@@ -6,6 +8,14 @@ if(!$conn = mysql_connect($host, "s1413137", "s1413137hoge")){
 }
 mysql_select_db("s1413137", $conn);
 mysql_set_charset("utf8");
+
+if($is_login){
+    $login_user_id = $_SESSION['user_id'];
+    $res = mysql_query("select name from users where id = '$login_user_id'");
+    $row = mysql_fetch_assoc($res);
+    $login_user_name = $row['name'];
+    mysql_free_result($res);
+}
 
 $pic_id = $_POST['pic_id'];
 $tag_name = $_POST['tag_name'];
@@ -61,11 +71,6 @@ if(!$is_login){
     print("<table><tr><td>ユーザID</td><td><input type='text' name='login_user_id'></td></tr><tr><td>パスワード</td><td><input type='password' name='login_user_pass'></td></tr><tr><td colspan='2'><input type='submit' value='ログイン'><td></tr></table>");
     print("</form>");
 } else {
-    $sql = "select name from users where id = '$login_user_id'";
-    $res = mysql_query($sql, $conn);
-    $row = mysql_fetch_assoc($res);
-    $login_user_name = $row['name'];
-
     print("<p class='tel'><span>ログインユーザ:</span> $login_user_name</p>");
     print("<p class='open'><form action='logout.php' method='post'><input type='submit' value='ログアウト'></form></p>");
     mysql_free_result($res);
@@ -99,11 +104,11 @@ if(!$is_login){
         <section id="main">
         
     <section class="content">
-        <h3 class="heading">「<?php print($pic_title); ?>」のタグ「<?php print($to_show_tag_name); ?>」を削除</h3>
+        <h3 class="heading">「<?php print($pic_title); ?>」のタグ「<?php print($tag_name); ?>」を削除</h3>
         <article>
 <?php 
 if($is_suc){
-    print("「".$to_show_tag_name."」タグを削除しました。<br>");
+    print("「".$tag_name."」タグを削除しました。<br>");
 } else {
     print("タグを削除出来ませんでした。<br>");
 }

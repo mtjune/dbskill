@@ -1,7 +1,6 @@
 <?php
-
 session_start();
-
+$is_login = isset($_SESSION["user_id"]);
 
 $host = "localhost";
 if(!$conn = mysql_connect($host, "s1413137", "s1413137hoge")){
@@ -56,7 +55,7 @@ mysql_free_result($res);
         <!-- 電話番号+受付時間 -->
         <div class="info">
 <?php
-if(!isset($_SESSION["user_id"])){
+if(!$is_login){
     print("<form action='login.php' method='post'>");
     print("<table><tr><td>ユーザID</td><td><input type='text' name='login_user_id'></td></tr><tr><td>パスワード</td><td><input type='password' name='login_user_pass'></td></tr><tr><td colspan='2'><input type='submit' vlue='ログイン'><td></tr></table>");
     print("</form>");
@@ -98,27 +97,33 @@ if(!isset($_SESSION["user_id"])){
   
   <!-- コンテンツ -->
         <section id="main">
-  
-    
-    <section class="content">
-        <h3 class="heading"><?php print($pic_title) ?></h3>
-        <article>
 <?php
-        print("<img src='$pic_filename' width='600' alt='$pic_title' class='alignright border' />");
-        
+if($is_login){
+    print("<section class='content'>¥n");
+    print("<h3 class='heading'>ログイン情報</h3>¥n");
+    print("<article>¥n");
+    print("<table class='table'>¥n");
+    print("<tr><td>ユーザID</td><td>$login_user_id</td></tr>¥n");
+    print("<tr><td>ユーザ名</td><td>$login_user_name</td></tr>¥n");
+    print("</table>¥n");
+    print("</article>¥n");
+    print("</section>¥n");
+
+    print("<section class='content'>¥n");
+    print("<h3 class='heading'>投稿写真</h3>¥n");
+    print("<article>¥n");
+    print("</article>¥n");
+    print("</section>¥n");
+}else{
+    print("<section class='content'>¥n");
+    print("<h3 class='heading'>ログイン情報</h3>¥n");
+    print("<article>¥n");
+    print("右上のフォームでログインしてください。<br>¥n");
+    print("ユーザ登録されてない方は, 上のメニューからユーザ登録をしてください");
+    print("</article>¥n");
+    print("</section>¥n");
+}
 ?>
-        </article>
-        <article>
-        <table class="table">   
-<?php
-        print("<tr><th>タイトル</th><td>$pic_title</td></tr>");
-        print("<tr><th>投稿者</th><td>$pic_user_name</td></tr>");
-        print("<tr><th>投稿日</th><td>$pic_post_date</td></tr>");
-        print("<tr><th>備考</th><td>$pic_remarks</td></tr>");
-?>
-        </table>
-        </article>
-    </section>
     </section>
         <!-- / コンテンツ -->
 

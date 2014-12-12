@@ -1,5 +1,6 @@
 <?php
 session_start();
+$is_login = isset($_SESSION["user_id"]);
 
 $host = "localhost";
 if(!$conn = mysql_connect($host, "s1413137", "s1413137hoge")){
@@ -66,7 +67,7 @@ if(!isset($_SESSION["user_id"])){
         <ul>
             <li class="active"><a href="index.php"><strong>トップページ</strong><span>Top</span></a></li>
                 <li><a href="subpage.html"><strong>ブックマーク新着</strong><span>Bookmark</span></a></li>
-                <li><a href="get_pics.php"><strong>ユーザーページ</strong><span>User Page</span></a></li>
+                <li><a href="userpage.php"><strong>ユーザーページ</strong><span>User Page</span></a></li>
                 <li><a href="picpost_form.html"><strong>写真投稿</strong><span>Photo Post</span></a></li>
                 <li><a href="signup_form.html"><strong>ユーザ登録</strong><span>Sign Up</span></a></li>
                 <li class="last"><a href="get_tables.php"><strong>全テーブルを表示</strong><span>Show Tables</span></a></li>

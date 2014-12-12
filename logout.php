@@ -1,6 +1,6 @@
 <?php
-
 session_start();
+$is_login = isset($_SESSION["user_id"]);
 
 $host = "localhost";
 if(!$conn = mysql_connect($host, "s1413137", "s1413137hoge")){
@@ -50,7 +50,7 @@ session_destroy();
     <!-- 電話番号+受付時間 -->
     <div class="info">
 <?php
-if(!isset($_SESSION["user_id"])){
+if(!$is_login){
     print("<form action='login.php' method='post'>");
     print("<table><tr><td>ユーザID</td><td><input type='text' name='login_user_id'></td></tr><tr><td>パスワード</td><td><input type='password' name='login_user_pass'></td></tr><tr><td colspan='2'><input type='submit' value='ログイン'><td></tr></table>");
     print("</form>");

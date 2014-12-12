@@ -114,7 +114,7 @@ if(!$is_login){
         <article>
 <?php 
 if($login_result === 0){
-    print("ようこそ、$login_user_nameさん。<br>");
+    print("ようこそ、".$login_user_name."さん。<br>");
 }else if($login_result === 1){
     print("ユーザIDが存在しません。<br>");
 }else{

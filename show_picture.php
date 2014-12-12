@@ -122,7 +122,7 @@ mysql_free_result($res);
 
     <h3 class="heading">タグを付ける</h3>
     <article>
-            <form action="search.php" method="post">
+            <form action="add_tag.php" method="post">
             <?php print("<input type='hidden' name='pic_id' value='$pic_id' />"); ?>
             <select name="tag_name">
                     <option value="new_tag">新しいタグを付ける</option>

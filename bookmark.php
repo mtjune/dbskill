@@ -20,7 +20,7 @@ if($is_login){
 $tag_name = $_POST['tag_name'];
 if($is_login){
     $sql = "insert into bookmarks values('$login_user_id', '$tag_name')";
-    echo $sql;
+    $is_suc = mysql_query($sql, $conn);
 }
 
 
@@ -102,7 +102,7 @@ if($is_login){
     print("<section class='content'>\n");
     print("<h3 class='heading'>ブックマーク</h3>\n");
     print("<article>\n");
-    print("タグ「$tag_name」をブックマークしました。\n");
+    print("タグ「".$tag_name."」をブックマークしました。\n");
     print("</article>\n");
     print("</section>\n");
 }else{

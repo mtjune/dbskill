@@ -22,7 +22,7 @@ mysql_free_result($res);
 $flag1 = false;
 $flag2 = false;
 
-if($tag_post == "new_tag"){
+if($tag_name == "new_tag"){
     $sql = "insert into tags value('$new_tag_name')";
 
     $sql = "insert into additions value('$new_tag_name', $pic_id)";
@@ -105,7 +105,7 @@ if(flag1 || flag2){
 }
 
 print("<br><br>");
-print("<a href='show_picture.php&pic_id=$pic_id'>「$pic_title」へ戻る</a>");
+print("<a href='show_picture.php?pic_id=$pic_id'>「$pic_title」へ戻る</a>");
 
 ?>
         </article>

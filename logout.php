@@ -9,9 +9,6 @@ if(!$conn = mysql_connect($host, "s1413137", "s1413137hoge")){
 mysql_select_db("s1413137", $conn);
 mysql_set_charset("utf8");
 
-$login_user_id = $_POST['login_user_id'];
-$login_user_pass = $_POST['login_user_pass'];
-
 $_SESSION = array();
 
 if (isset($_COOKIE["PHPSESSID"])) {

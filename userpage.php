@@ -31,7 +31,7 @@ mysql_free_result($res);
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, user-scalable=yes, maximum-scale=1.0, minimum-scale=1.0">
-<title><?php print($pic_title) ?> - Phorm</title>
+<title>ユーザーページ - Phorm</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <link rel="stylesheet" href="style.css" type="text/css" media="screen">
@@ -99,12 +99,12 @@ if(!isset($_SESSION["user_id"])){
         <section id="main">
 <?php
 if($is_login){
-    print("<section class='content'>¥¥\n");
+    print("<section class='content'>\n");
     print("<h3 class='heading'>ログイン情報</h3>\n");
     print("<article>\n");
     print("<table class='table'>\n");
-    print("<tr><td>ユーザID</td><td>$login_user_id</td></tr>\n");
-    print("<tr><td>ユーザ名</td><td>$login_user_name</td></tr>\n");
+    print("<tr><th>ユーザID</th><td>$login_user_id</td></tr>\n");
+    print("<tr><th>ユーザ名</th><td>$login_user_name</td></tr>\n");
     print("</table>\n");
     print("</article>\n");
     print("</section>\n");
@@ -128,7 +128,22 @@ if($is_login){
         <!-- / コンテンツ -->
 
         <aside id="sidebar">
-        
+        <h3 class="heading">ブックマークしているタグ</h3>
+        <article>
+        <ul>
+<?php
+
+$sql = "select tag_name from bookmarks where user_id = '$login_user_id';";
+$res = mysql_query($sql, $conn);
+while($row = mysql_fetch_assoc($res)){
+        $tag = $row['tag_name'];
+        print("<li><a href='search.php?search_mode=tag&word=$tag'>$tag</a><form action='bookmark_del.php' method='post'><input type='hidden' name='tag_name' value='$tag'><input type='submit' value='解除'></form></li>");
+}
+mysql_free_result($res);
+
+?>
+        </ul>
+        </article>
         </aside>
  
 </div>

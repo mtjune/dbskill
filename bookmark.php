@@ -111,6 +111,7 @@ if($is_login){
     print("<section class='content'>\n");
     print("<h3 class='heading'>ログイン情報</h3>\n");
     print("<article>\n");
+    print("ログインしていません");
     print("右上のフォームでログインしてください。<br>\n");
     print("ユーザ登録されてない方は, 上のメニューからユーザ登録をしてください\n");
     print("<br><br>");
@@ -127,7 +128,22 @@ if($is_login){
         </aside>
  
 </div>
- 
+ <!-- フッター -->
+<footer id="footer">
+    <div class="inner">
+    <!-- 左側 -->
+        <div id="info" class="grid">
+            <!-- 電話番号+受付時間 -->
+            <div class="info">
+                <p class="tel"><span>作成者:</span> 山田純也</p>
+                <p class="open">学籍番号: 201413137</p>
+            </div>
+            <!-- / 電話番号+受付時間 -->
+        </div>  
+        <!-- / 左側 -->
+    </div>
+</footer>
+<!-- / フッター -->
 <address>Copyright(c) 2013 Sample Inc. All Rights Reserved. Design by <a href="http://f-tpl.com" target="_blank" rel="nofollow">http://f-tpl.com</a></address>
 
 </body>

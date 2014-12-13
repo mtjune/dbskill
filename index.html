@@ -18,72 +18,40 @@
 <body>
 <header id="header">
   <h1>Photos Posted Site.</h1>
-  
-  <!-- ロゴ -->
-	<div class="logo">
-		<a href="index.html"><img src="images/Phorm_top_logo.png" width="45" height="45" alt="Sample site" /></a>
-	</div>
-	<!-- / ロゴ -->
-	<!-- 電話番号+受付時間 -->
-	<div class="info">
-
-	</div>
-	<!-- / 電話番号+受付時間 -->
 </header>
 
-<!-- メインナビゲーション -->
-<nav id="mainNav">
-	<div class="inner">
-  	<a class="menu" id="menu"><span>MENU</span></a>
-		<div class="panel">   
-    	<ul>
-    		<li class="active"><a href="index.html"><strong>トップページ</strong><span>Top</span></a></li>
-    			<li><a href="subpage.html"><strong>ブックマーク新着</strong><span>Bookmark</span></a></li>
-    			<li><a href="get_pics.php"><strong>ユーザーページ</strong><span>User Page</span></a></li>
-    			<li><a href="picpost_form.html"><strong>写真投稿</strong><span>Photo Post</span></a></li>
-				<li><a href="signup_form.html"><strong>ユーザ登録</strong><span>Sign Up</span></a></li>
-				<li class="last"><a href="get_tables.php"><strong>全テーブルを表示</strong><span>Show Tables</span></a></li>
-			</ul>   
-    </div>
-	</div> 
-</nav>
-<!-- / メインナビゲーション -->
+
   
 <div id="wrapper">
   
   <!-- メイン画像 -->
-	<div id="mainBanner">
-		<img src="images/Phorm_top_logo.png" width="50%" alt="Phorm" class="alignleft border">
-		<p>
-		<br>
-		<form action="search.php" method="get">
-		<table>
-			<tr><td>写真を探す</td></tr>
-			<tr><td><input type="text" name="word"></td><td><input type="submit" value="検索"></td></tr>
-		</table>
-		<table>
-			<tr>
-				<td><input type="radio" name="search_mode" value="keyword" checked></td>
-				<td>キーワード検索</td>
-			</tr>
-			<tr>
-				<td><input type="radio" name="search_mode" value="title"></td>
-				<td>タイトル検索</td>
-			</tr>
-			<tr>
-				<td><input type="radio" name="search_mode" value="tag"></td>
-				<td>タグ検索</td>
-			</tr>
-		</table>
-		</form>
-		</p>
-	</div>
-	<!-- / メイン画像 -->
-	
+    <div id="mainBanner">
+        <a href="index.php"><img src="images/Phorm_top_logo.png" width="50%" alt="Phorm" class="border"></a>
+    </div>
+    <!-- / メイン画像 -->
+    <div>
+    	こちらはトップページです。上のロゴマークをクリックしてシステムにアクセスしてください。
+    </div>
+    
 
   
 </div>
- 
+<!-- フッター -->
+<footer id="footer">
+    <div class="inner">
+    <!-- 左側 -->
+        <div id="info" class="grid">
+            <!-- 電話番号+受付時間 -->
+            <div class="info">
+                <p class="tel"><span>作成者:</span> 山田純也</p>
+                <p class="open">学籍番号: 201413137</p>
+            </div>
+            <!-- / 電話番号+受付時間 -->
+        </div>  
+        <!-- / 左側 -->
+    </div>
+</footer>
+<!-- / フッター -->
 <address>Copyright(c) 2013 Sample Inc. All Rights Reserved. Design by <a href="http://f-tpl.com" target="_blank" rel="nofollow">http://f-tpl.com</a></address>
 
 </body>

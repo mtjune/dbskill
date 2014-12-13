@@ -112,14 +112,11 @@ if(!$is_login){
 
   
 </div>
- <!-- フッター -->
+<!-- フッター -->
 <footer id="footer">
     <div class="inner">
     <!-- 左側 -->
         <div id="info" class="grid">
-            <!-- ロゴ -->
-            
-            <!-- / ロゴ -->
             <!-- 電話番号+受付時間 -->
             <div class="info">
                 <p class="tel"><span>作成者:</span> 山田純也</p>
@@ -128,9 +125,6 @@ if(!$is_login){
             <!-- / 電話番号+受付時間 -->
         </div>  
         <!-- / 左側 -->
-        <!-- 右側 ナビゲーション -->
-        
-        <!-- / 右側 ナビゲーション -->
     </div>
 </footer>
 <!-- / フッター -->

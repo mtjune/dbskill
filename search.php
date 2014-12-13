@@ -102,7 +102,7 @@ if(!$is_login){
 <?php
 
 while($row = mysql_fetch_assoc($res)){
-    print("<a href='show_picture.php?pic_id=".$row['pic_id']."'>")
+    print("<a href='show_picture.php?pic_id=".$row['pic_id']."'>");
 	print("<section class='square'><article>");
 	print("<img src='".$row['file_name']."' width='190' height='140' alt='".$row['title']."' class='alignleft border' />");
 	print("<table class='table'><tr><th>タイトル</th><td>".$row['title']."</td></tr>");

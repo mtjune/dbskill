@@ -131,7 +131,7 @@ mysql_free_result($res);
 <section class="content">
 <h3 class="heading">タグテーブル - tags</h3>
 <article>
-<table class="table">
+<table class='tablerow'>
 <tr><th>タグ名</th></tr>
 <?php
 
@@ -177,7 +177,7 @@ mysql_free_result($res);
 <tr><th>タグ名</th><th>写真ID</th></tr>
 <?php
 
-$sql = "select * from additiions";
+$sql = "select * from additions";
 $res = mysql_query($sql, $conn);
 while($row = mysql_fetch_array($res)){
         print("<tr>");

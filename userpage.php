@@ -23,7 +23,6 @@ $pic_user_name = $row['user_name'];
 
 mysql_free_result($res);
 
-
 ?>
 
 <!DOCTYPE html>

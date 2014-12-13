@@ -29,6 +29,21 @@ $pic_remarks = $row['remarks'];
 $pic_post_date = $row['post_date'];
 $pic_user_name = $row['user_name'];
 
+// 評価値計算
+$sql = "select value from evaluations where pic_id ='$pic_id'";
+$res = mysql_query($sql, $conn);
+$totalValue = 0;
+$numEva = 0;
+while($row = mysql_fetch_assoc($res)){
+    $totalValue += $row['value'];
+    $numEva += 1;
+}
+if($numEva === 0){
+    $pic_evaluation = "評価なし";
+}else{
+    $pic_evaluation = $totalValue / $numEva;
+}
+
 mysql_free_result($res);
 ?>
 
@@ -114,9 +129,24 @@ if(!$is_login){
         print("<tr><th>投稿者</th><td>$pic_user_name</td></tr>");
         print("<tr><th>投稿日</th><td>$pic_post_date</td></tr>");
         print("<tr><th>備考</th><td>$pic_remarks</td></tr>");
+        print("<tr><th>評価</th><td>$pic_evaluation</td></tr>");
 ?>
         </table>
         </article>
+<?php
+
+if($is_login){
+    print("<article>
+            <form action='evaluate.php' method='post'>
+                <input type='number' name='eva_value' min='1' max='5' value='3'>
+                <input type='hidden' name='pic_id' value='$pic_id'>
+                <input type='submit' value='評価をつける'>
+            </form>
+        </article>");
+}
+
+?>
+        
     </section>
     </section>
         <!-- / コンテンツ -->

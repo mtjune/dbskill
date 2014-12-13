@@ -31,7 +31,6 @@ if($mode == "keyword"){
 $res = mysql_query($sql, $conn);
 
 
-
 ?>
 
 <!DOCTYPE html>

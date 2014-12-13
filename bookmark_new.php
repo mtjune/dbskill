@@ -89,60 +89,39 @@ if(!$is_login){
   
   <!-- コンテンツ -->
 	<section id="main">    
-    <section class="content">
+    
 <?php
 
 if($is_login){
     print("<section class='content'><h3 class='heading'>検索結果</h3><br><br>");
 
-while($row = mysql_fetch_assoc($res)){
-    print("<a href='show_picture.php?pic_id=".$row['pic_id']."'>");
-    print("<section class='square'><article>");
-    print("<img src='".$row['file_name']."' width='190' height='140' alt='".$row['title']."' class='alignleft border' />");
-    print("<table class='table'><tr><th>タイトル</th><td>".$row['title']."</td></tr>");
-    print("<tr><th>投稿者</th><td>".$row['user_name']."</td></tr></table>");
-    print("</article></section>");
-    print("</a><br>");
-}
-mysql_free_result($res);
+    while($row = mysql_fetch_assoc($res)){
+        print("<a href='show_picture.php?pic_id=".$row['pic_id']."'>");
+        print("<section class='square'><article>");
+        print("<img src='".$row['file_name']."' width='190' height='140' alt='".$row['title']."' class='alignleft border' />");
+        print("<table class='table'><tr><th>タイトル</th><td>".$row['title']."</td></tr>");
+        print("<tr><th>投稿者</th><td>".$row['user_name']."</td></tr></table>");
+        print("</article></section>");
+        print("</a><br>");
+    }
+    print("</section>");
+    mysql_free_result($res);
 
 } else {
-    print("<h3 class='heading'>ログイン情報</h3>");
+    print("<section class='content'><h3 class='heading'>ログイン情報</h3>");
     print("<article>\n");
     print("ログインしていません");
     print("右上のフォームでログインしてください。<br>\n");
     print("ユーザ登録されてない方は, 上のメニューからユーザ登録をしてください\n");
-    print("</article>\n");
+    print("</article></section>\n");
 }
 
 ?>
     </section>
-    </section>
 	<!-- / コンテンツ -->
 
 	<aside id="sidebar">
-	<h3 class="heading">写真を探す</h3>
-		<article>
-		<form action="search.php" method="get">
-		<table>
-			<tr><td><input type="text" name="word"></td><td><input type="submit" value="検索"></td></tr>
-		</table>
-		<table>
-			<tr>
-				<td><input type="radio" name="search_mode" value="keyword" checked></td>
-				<td>キーワード検索</td>
-			</tr>
-			<tr>
-				<td><input type="radio" name="search_mode" value="title"></td>
-				<td>タイトル検索</td>
-			</tr>
-			<tr>
-				<td><input type="radio" name="search_mode" value="tag"></td>
-				<td>タグ検索</td>
-			</tr>
-		</table>
-		</form>
-		</article>
+	
 	</aside>
  
 </div>

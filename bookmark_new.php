@@ -106,7 +106,7 @@ while($row = mysql_fetch_assoc($res)){
 mysql_free_result($res);
 
 } else {
-    print("<h3 class='heading'>ログインされていない</h3>");
+    print("<h3 class='heading'>ログイン情報</h3>");
     print("<article>\n");
     print("ログインしていません");
     print("右上のフォームでログインしてください。<br>\n");

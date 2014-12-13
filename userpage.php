@@ -115,7 +115,7 @@ if($is_login){
     print("<section class='content'>\n");
     print("<h3 class='heading'>投稿写真</h3><br><br>\n");
     while($row = mysql_fetch_assoc($res)){
-        print("<a href='show_picture.php?pic_id=".$row['pic_id']."'>");
+        print("<a href='show_picture.php?pic_id=".$row['id']."'>");
         print("<section class='square'><article>");
         print("<img src='".$row['file_name']."' width='190' height='140' alt='".$row['title']."' class='alignleft border' />");
         print("<table class='table'><tr><th>タイトル</th><td>".$row['title']."</td></tr></table>");

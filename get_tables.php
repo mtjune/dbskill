@@ -86,7 +86,7 @@ if(!$is_login){
 <section class="content">
 <h3 class="heading">写真テーブル - pics</h3>
 <article>
-<table class='table'>
+<table class='tablerow'>
 <tr><th>ID</th><th>タイトル</th><th>ファイル名</th><th>備考</th><th>ユーザID</th><th>投稿日</th></tr>
 <?php
 $sql = "select * from pics";
@@ -110,7 +110,7 @@ mysql_free_result($res);
 <section class="content">
 <h3 class="heading">ユーザテーブル - users</h3>
 <article>
-<table class='table'>
+<table class='tablerow'>
 <tr><th>ID</th><th>ユーザ名</th><th>パスワード</th></tr>
 <?php
 $sql = "select * from users";
@@ -151,7 +151,7 @@ mysql_free_result($res);
 <section class="content">
 <h3 class="heading">評価テーブル - evaluations</h3>
 <article>
-<table class='table'>
+<table class='tablerow'>
 <tr><th>写真ID</th><th>ユーザID</th><th>評価値</th></tr>
 <?php
 
@@ -173,7 +173,7 @@ mysql_free_result($res);
 <section class="content">
 <h3 class="heading">付与テーブル - additions</h3>
 <article>
-<table class='table'>
+<table class='tablerow'>
 <tr><th>タグ名</th><th>写真ID</th></tr>
 <?php
 
@@ -194,7 +194,7 @@ mysql_free_result($res);
 <section class="content">
 <h3 class="heading">ブックマークテーブル - bookmarks</h3>
 <article>
-<table class='table'>
+<table class='tablerow'>
 <tr><th>ユーザID</th><th>タグ名</th></tr>
 <?php
 

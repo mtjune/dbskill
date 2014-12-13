@@ -57,6 +57,39 @@ section.square{
 	padding: 10px 5px 10px 20px;
 }
 
+table.tablerow{
+border-collapse:collapse;
+margin:5px auto 15px auto;
+}
+
+table.tablerow td{
+border-collapse:collapse;
+background-color:#F9F9F9;
+text-align:left;
+padding:8px;
+border:1px solid #D6D6D6;
+line-height:20px;
+}
+
+table.tablerow th{
+background-color:#F5F5F5;
+text-align:center;
+padding:8px;
+white-space:nowrap;
+color: #151515;
+border-top:1px solid #D4D4D4;
+border-right:1px solid #D4D4D4;
+border-bottom:4px solid #D4D4D4;
+border-left:1px solid #D4D4D4;
+font-size:13px;
+font-weight:normal;
+letter-spacing:1px;
+background-repeat:repeat-x;
+background-position:top;
+}
+
+
+
 
 /*************
 /* ヘッダー

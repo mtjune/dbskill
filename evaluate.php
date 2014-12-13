@@ -28,7 +28,7 @@ if($is_login){
         $is_suc = mysql_query($sql);
     }else{
         $sql = "update evaluations set value=".$eva_value." where pic_id = '$pic_id' and user_id = '$login_user_id'";
-        $is_suc = mysql_query($sql)
+        $is_suc = mysql_query($sql);
     }
 }
 

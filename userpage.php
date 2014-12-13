@@ -120,7 +120,7 @@ if($is_login){
         print("<img src='".$row['file_name']."' width='190' height='140' alt='".$row['title']."' class='alignleft border' />");
         print("<table class='table'><tr><th>タイトル</th><td>".$row['title']."</td></tr></table>");
         print("</article></section>");
-        print("</a><br><br>");
+        print("</a><br>");
     }
     print("</section>\n");
 }else{

@@ -19,6 +19,8 @@ if($is_login){
 
 if($is_login){
     $sql = "select distinct pics.id as pic_id, pics.title as title, pics.file_name as file_name, users.name as user_name from pics, additions, users, bookmarks where users.id = pics.user_id and pics.id = additions.pic_id and additions.tag_name = bookmarks.tag_name and bookmarks.user_id = '$login_user_id' order by pics.post_date desc";
+
+    $res = mysql_query($res, $conn);
 }
 
 

@@ -94,7 +94,7 @@ if(!$is_login){
 
 if($is_login){
     print("<section class='content'><h3 class='heading'>検索結果</h3><br><br>");
-
+    echo "check";
     while($row = mysql_fetch_assoc($res)){
         print("<a href='show_picture.php?pic_id=".$row['pic_id']."'>");
         print("<section class='square'><article>");

@@ -9,6 +9,13 @@ if(!$conn = mysql_connect($host, "s1413137", "s1413137hoge")){
 mysql_select_db("s1413137", $conn);
 mysql_set_charset("utf8");
 
+if($is_login){
+    $login_user_id = $_SESSION['user_id'];
+    $res = mysql_query("select name from users where id = '$login_user_id'");
+    $row = mysql_fetch_assoc($res);
+    $login_user_name = $row['name'];
+    mysql_free_result($res);
+}
 
 $tag_name = $_POST['tag_name'];
 if($is_login){
@@ -51,14 +58,8 @@ if(!$is_login){
     print("<table><tr><td>ユーザID</td><td><input type='text' name='login_user_id'></td></tr><tr><td>パスワード</td><td><input type='password' name='login_user_pass'></td></tr><tr><td colspan='2'><input type='submit' value='ログイン'><td></tr></table>");
     print("</form>");
 } else {
-    $login_user_id = $_SESSION['user_id'];
-    $sql = "select name from users where id = '$login_user_id'";
-    $res = mysql_query($sql, $conn);
-    $row = mysql_fetch_assoc($res);
-    $login_user_name = $row['name'];
     print("<p class='tel'><span>ログインユーザ:</span> $login_user_name</p>");
     print("<p class='open'><form action='logout.php' method='post'><input type='submit' value='ログアウト'></form></p>");
-    mysql_free_result($res);
 }
 ?>
     </div>

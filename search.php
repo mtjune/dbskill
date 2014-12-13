@@ -103,8 +103,8 @@ if(!$is_login){
 while($row = mysql_fetch_assoc($res)){
 	print("<section><article>");
 	print("<a href='show_picture.php?pic_id=".$row['pic_id']."'><img src='".$row['file_name']."' width='190' height='140' alt='".$row['title']."' class='alignleft border' /></a>");
-	print("<table class='table'><tr><td>".$row['title']."</td></tr>");
-	print("<tr><td>".$row['user_name']."</td></tr><table>");
+	print("<table class='table'><tr><th>タイトル</th><td>".$row['title']."</td></tr>");
+	print("<tr><th>投稿者</th><td>".$row['user_name']."</td></tr></table>");
 	print("</section></article>");
 }
 mysql_free_result($res);

@@ -105,7 +105,7 @@ while($row = mysql_fetch_assoc($res)){
 	print("<a href='show_picture.php?pic_id=".$row['pic_id']."'><img src='".$row['file_name']."' width='190' height='140' alt='".$row['title']."' class='alignleft border' /></a>");
 	print("<table class='table'><tr><th>タイトル</th><td>".$row['title']."</td></tr>");
 	print("<tr><th>投稿者</th><td>".$row['user_name']."</td></tr></table>");
-	print("</section></article>");
+	print("</article></section>");
 }
 mysql_free_result($res);
 

@@ -108,7 +108,7 @@ while($row = mysql_fetch_assoc($res)){
 	print("<table class='table'><tr><th>タイトル</th><td>".$row['title']."</td></tr>");
 	print("<tr><th>投稿者</th><td>".$row['user_name']."</td></tr></table>");
 	print("</article></section>");
-    print("</a>")
+    print("</a>");
 }
 mysql_free_result($res);
 

@@ -95,6 +95,8 @@ if($is_login){
     print("<h3 class='heading'>ブックマーク削除</h3>\n");
     print("<article>\n");
     print("タグ「".$tag_name."」のブックマークを削除しました。\n");
+    print("<br><br>");
+    print("<a href='userpage.php'>ユーザーページへ戻る</a>");
     print("</article>\n");
     print("</section>\n");
 }else{
@@ -103,6 +105,8 @@ if($is_login){
     print("<article>\n");
     print("右上のフォームでログインしてください。<br>\n");
     print("ユーザ登録されてない方は, 上のメニューからユーザ登録をしてください");
+    print("<br><br>");
+    print("<a href='userpage.php'>ユーザーページへ戻る</a>");
     print("</article>\n");
     print("</section>\n");
 }

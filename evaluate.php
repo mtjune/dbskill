@@ -30,6 +30,7 @@ if($is_login){
         $sql = "update evaluations set value=".$eva_value." where pic_id = '$pic_id' and user_id = '$login_user_id'";
         $is_suc = mysql_query($sql);
     }
+    mysql_free_result($res)
 }
 
 ?>
@@ -86,7 +87,7 @@ if(!$is_login){
             <li><a href="bookmark_new.php"><strong>ブックマーク新着</strong><span>Bookmark</span></a></li>
             <li><a href="userpage.php"><strong>ユーザーページ</strong><span>User Page</span></a></li>
             <li><a href="picpost_form.php"><strong>写真投稿</strong><span>Photo Post</span></a></li>
-            <li class="active"><a href="signup_form.php"><strong>ユーザ登録</strong><span>Sign Up</span></a></li>
+            <li><a href="signup_form.php"><strong>ユーザ登録</strong><span>Sign Up</span></a></li>
             <li class="last"><a href="get_tables.php"><strong>全テーブルを表示</strong><span>Show Tables</span></a></li>
         </ul>
     </div>
@@ -99,13 +100,23 @@ if(!$is_login){
   <!-- コンテンツ -->
         <section id="main">
 <section class="content">
-<h3 class="heading">ユーザ登録</h3>
+<h3 class="heading">評価値</h3>
 <article>
 <?php
-if($is_suc){
-	print("登録完了");
-}else{
-	print("登録出来ませんでした");
+if($is_login){
+    if($is_suc){
+        print("登録完了");
+    }else{
+        print("登録出来ませんでした");
+    }
+} else {
+    print("<section class='content'>\n");
+    print("<h3 class='heading'>ログイン情報</h3>\n");
+    print("<article>\n");
+    print("右上のフォームでログインしてください。<br>\n");
+    print("ユーザ登録されてない方は, 上のメニューからユーザ登録をしてください");
+    print("</article>\n");
+    print("</section>\n");
 }
 ?>
 

@@ -98,14 +98,17 @@ if(!$is_login){
 	<section id="main">    
     <section class="content">
     	<h3 class="heading">検索結果</h3>
+        <br><br>
 <?php
 
 while($row = mysql_fetch_assoc($res)){
+    print("<a href='show_picture.php?pic_id=".$row['pic_id']."'>")
 	print("<section class='square'><article>");
-	print("<a href='show_picture.php?pic_id=".$row['pic_id']."'><img src='".$row['file_name']."' width='190' height='140' alt='".$row['title']."' class='alignleft border' /></a>");
+	print("<img src='".$row['file_name']."' width='190' height='140' alt='".$row['title']."' class='alignleft border' />");
 	print("<table class='table'><tr><th>タイトル</th><td>".$row['title']."</td></tr>");
 	print("<tr><th>投稿者</th><td>".$row['user_name']."</td></tr></table>");
-	print("</article></section><hr>");
+	print("</article></section>");
+    print("</a>")
 }
 mysql_free_result($res);
 

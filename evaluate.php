@@ -104,11 +104,21 @@ if(!$is_login){
 <article>
 <?php
 if($is_login){
+    // 写真のタイトルを取得
+    $sql = "select title from pics where id = '$pic_id'";
+    $res = mysql_query($sql, $conn);
+    $row = mysql_fetch_assoc($res);
+    $pic_title = $row['title'];
+    mysql_free_result($res);
+
     if($is_suc){
         print("登録完了");
     }else{
         print("登録出来ませんでした");
     }
+    print("<br><br>");
+    print("<a href='show_picture.php?pic_id=$pic_id'>「".$pic_title."」へ戻る</a>");
+
 } else {
     print("<section class='content'>\n");
     print("<h3 class='heading'>ログイン情報</h3>\n");

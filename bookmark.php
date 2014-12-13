@@ -18,6 +18,7 @@ if($is_login){
 }
 
 $tag_name = $_POST['tag_name'];
+$toback_pic_id = $_POST['pic_id'];
 if($is_login){
     $sql = "insert into bookmarks values('$login_user_id', '$tag_name')";
     $is_suc = mysql_query($sql, $conn);
@@ -89,11 +90,21 @@ if(!$is_login){
   <!-- コンテンツ -->
         <section id="main">
 <?php
+
+// 写真のタイトルを取得
+$sql = "select title from pics where id = '$toback_pic_id'";
+$res = mysql_query($sql, $conn);
+$row = mysql_fetch_assoc($res);
+$toback_pic_title = $row['title'];
+mysql_free_result($res);
+
 if($is_login){
     print("<section class='content'>\n");
     print("<h3 class='heading'>ブックマーク</h3>\n");
     print("<article>\n");
     print("タグ「".$tag_name."」をブックマークしました。\n");
+    print("<br><br>");
+    print("<a href='show_picture.php?pic_id=$toback_pic_id'>「".$toback_pic_title."」へ戻る</a>");
     print("</article>\n");
     print("</section>\n");
 }else{
@@ -101,7 +112,9 @@ if($is_login){
     print("<h3 class='heading'>ログイン情報</h3>\n");
     print("<article>\n");
     print("右上のフォームでログインしてください。<br>\n");
-    print("ユーザ登録されてない方は, 上のメニューからユーザ登録をしてください");
+    print("ユーザ登録されてない方は, 上のメニューからユーザ登録をしてください\n");
+    print("<br><br>");
+    print("<a href='show_picture.php?pic_id=$toback_pic_id'>「".$toback_pic_title."」へ戻る</a>");
     print("</article>\n");
     print("</section>\n");
 }

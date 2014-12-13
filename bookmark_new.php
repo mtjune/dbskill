@@ -20,7 +20,8 @@ if($is_login){
 if($is_login){
     $sql = "select distinct pics.id as pic_id, pics.title as title, pics.file_name as file_name, users.name as user_name from pics, additions, users, bookmarks where users.id = pics.user_id and pics.id = additions.pic_id and additions.tag_name = bookmarks.tag_name and bookmarks.user_id = '$login_user_id' order by pics.post_date desc";
 
-    $res = mysql_query($res, $conn);
+
+    $res = mysql_query($sql, $conn);
 }
 
 
@@ -95,7 +96,6 @@ if(!$is_login){
 if($is_login){
     print("<section class='content'><h3 class='heading'>検索結果</h3><br><br>");
     while($row = mysql_fetch_assoc($res)){
-        echo "check";
         print("<a href='show_picture.php?pic_id=".$row['pic_id']."'>");
         print("<section class='square'><article>");
         print("<img src='".$row['file_name']."' width='190' height='140' alt='".$row['title']."' class='alignleft border' />");

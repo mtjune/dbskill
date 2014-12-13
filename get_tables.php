@@ -72,7 +72,7 @@ if(!$is_login){
             <li><a href="userpage.php"><strong>ユーザーページ</strong><span>User Page</span></a></li>
             <li><a href="picpost_form.php"><strong>写真投稿</strong><span>Photo Post</span></a></li>
             <li><a href="signup_form.php"><strong>ユーザ登録</strong><span>Sign Up</span></a></li>
-            <li class="last actiove"><a href="get_tables.php"><strong>全テーブルを表示</strong><span>Show Tables</span></a></li>
+            <li class="active last"><a href="get_tables.php"><strong>全テーブルを表示</strong><span>Show Tables</span></a></li>
         </ul>
     </div>
     </div> 

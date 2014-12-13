@@ -74,7 +74,7 @@ if(!$is_login){
         <div class="panel">   
         <ul>
             <li><a href="index.php"><strong>トップページ</strong><span>Top</span></a></li>
-            <li><a href="bookmark_new.php"><strong>ブックマーク新着</strong><span>Bookmark</span></a></li>
+            <li class="active"><a href="bookmark_new.php"><strong>ブックマーク新着</strong><span>Bookmark</span></a></li>
             <li><a href="userpage.php"><strong>ユーザーページ</strong><span>User Page</span></a></li>
             <li><a href="picpost_form.php"><strong>写真投稿</strong><span>Photo Post</span></a></li>
             <li><a href="signup_form.php"><strong>ユーザ登録</strong><span>Sign Up</span></a></li>

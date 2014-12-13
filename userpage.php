@@ -109,10 +109,19 @@ if($is_login){
     print("</article>\n");
     print("</section>\n");
 
+    $sql = "select * from pics where user_id = '$login_user_id'";
+    $res = mysql_query($sql, $conn);
+
     print("<section class='content'>\n");
-    print("<h3 class='heading'>投稿写真</h3>\n");
-    print("<article>\n");
-    print("</article>\n");
+    print("<h3 class='heading'>投稿写真</h3><br><br>\n");
+    while($row = mysql_fetch_assoc($res)){
+        print("<a href='show_picture.php?pic_id=".$row['pic_id']."'>");
+        print("<section class='square'><article>");
+        print("<img src='".$row['file_name']."' width='190' height='140' alt='".$row['title']."' class='alignleft border' />");
+        print("<table class='table'><tr><th>タイトル</th><td>".$row['title']."</td></tr></table>");
+        print("</article></section>");
+        print("</a><br><br>");
+    }
     print("</section>\n");
 }else{
     print("<section class='content'>\n");

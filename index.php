@@ -112,6 +112,8 @@ if(!$is_login){
 
   <br>
   <div>
+        <br>
+        <br>
         <a href="s1413137-f-Yamada-Junya.ppt">パワーポイントファイルへのリンク</a>
         <br>
         <br>

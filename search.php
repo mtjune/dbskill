@@ -25,7 +25,7 @@ if($mode == "keyword"){
 } else if($mode == "title"){
 	$sql = "select distinct pics.id as pic_id, pics.title as title, pics.file_name as file_name, users.name as user_name from pics, users where users.id = pics.user_id and pics.title like '%$word%'";
 } else if($mode == "tag"){
-	$sql = "select distinct pics.id as pic_id, pics.title as title, pics.file_name as file_name, users.name as user_name from pics, additions, users where users.id = pics.user_id and pics.id = additions.pic_id and additions.tag_name like '%$word%'";
+	$sql = "select distinct pics.id as pic_id, pics.title as title, pics.file_name as file_name, users.name as user_name from pics, additions, users where users.id = pics.user_id and pics.id = additions.pic_id and additions.tag_name = '$word'";
 }
 
 $res = mysql_query($sql, $conn);

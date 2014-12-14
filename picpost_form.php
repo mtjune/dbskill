@@ -100,7 +100,7 @@ if($is_login){
 }else{
 	print("<h3 class='heading'>ログイン情報</h3>");
 	print("<article>\n");
-    print("ログインしていません");
+    print("ログインしていません。<br>");
     print("右上のフォームでログインしてください。<br>\n");
     print("ユーザ登録されてない方は, 上のメニューからユーザ登録をしてください\n");
     print("</article>\n");

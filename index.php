@@ -110,7 +110,31 @@ if(!$is_login){
     <!-- / メイン画像 -->
     
 
-  
+  <br>
+        <a href="s1413137-f-Yamada-Junya.ppt">パワーポイントファイルへのリンク</a>
+        <br>
+        <br>
+        <h1>-----スクリプトへのリンク-----</h1>
+        下のリンクはスクリプトへのリンクですが、セッションやPOSTなど利用しているので、システムを使用する場合はそれぞれのボタンから機能を利用してください。
+
+        <ul>
+            <li>・<a href="index.php">index.php</a></li>
+            <li>・<a href="login.php">login.php</a></li>
+            <li>・<a href="logout.php">logout.php</a></li>
+            <li>・<a href="userpage.php">userpage.php</a></li>
+            <li>・<a href="signup_form.php">signup_form.php</a></li>
+            <li>・<a href="signup.php">signup.php</a></li>
+            <li>・<a href="search.php">search.php</a></li>
+            <li>・<a href="show_picture.php">show_picture.php</a></li>
+            <li>・<a href="tag_add.php">tag_add.php</a></li>
+            <li>・<a href="tag_del.php">tag_del.php</a></li>
+            <li>・<a href="picpost_form.php">picpost_form.php</a></li>
+            <li>・<a href="picpost.php">picpost.php</a></li>
+            <li>・<a href="bookmark.php">bookmark.php</a></li>
+            <li>・<a href="bookmark_new.php">bookmark_new.php</a></li>
+            <li>・<a href="bookmark_del.php">bookmark_del.php</a></li>
+            <li>・<a href="evaluate.php">evaluate.php</a></li>
+        </ul>
 </div>
 <!-- フッター -->
 <footer id="footer">

@@ -111,6 +111,7 @@ if(!$is_login){
     
 
   <br>
+  <div id="mainBanner">
         <a href="s1413137-f-Yamada-Junya.ppt">パワーポイントファイルへのリンク</a>
         <br>
         <br>
@@ -135,6 +136,7 @@ if(!$is_login){
             <li>・<a href="bookmark_del.php">bookmark_del.php</a></li>
             <li>・<a href="evaluate.php">evaluate.php</a></li>
         </ul>
+</div>
 </div>
 <!-- フッター -->
 <footer id="footer">

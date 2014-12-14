@@ -4,7 +4,7 @@ create table pics(
 	file_name text,
 	remarks text,
 	user_id varchar(20) references users(id),
-	post_date date
+	post_date timestamp
 );
 
 create table users(

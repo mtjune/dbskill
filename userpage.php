@@ -140,15 +140,15 @@ if($is_login){
         <article>
         <ul>
 <?php
-
-$sql = "select tag_name from bookmarks where user_id = '$login_user_id';";
-$res = mysql_query($sql, $conn);
-while($row = mysql_fetch_assoc($res)){
-        $tag = $row['tag_name'];
-        print("<li><a href='search.php?search_mode=tag&word=$tag'>$tag</a><form action='bookmark_del.php' method='post'><input type='hidden' name='tag_name' value='$tag'><input type='submit' value='解除'></form></li>");
+if($is_login){
+    $sql = "select tag_name from bookmarks where user_id = '$login_user_id';";
+    $res = mysql_query($sql, $conn);
+    while($row = mysql_fetch_assoc($res)){
+            $tag = $row['tag_name'];
+            print("<li><a href='search.php?search_mode=tag&word=$tag'>$tag</a><form action='bookmark_del.php' method='post'><input type='hidden' name='tag_name' value='$tag'><input type='submit' value='解除'></form></li>");
+    }
+    mysql_free_result($res);
 }
-mysql_free_result($res);
-
 ?>
         </ul>
         </article>

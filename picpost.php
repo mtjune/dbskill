@@ -130,7 +130,7 @@ if($flag3) {
 	print("<h3 class='heading'>写真アップロード</h3>");
 	print("<article>");
 	print("「".$pic_title."」をアップロードしました");
-	print("<img src='$pic_filename_new' width='600' alt='$pic_title' class='alignright border' />");
+	print("<img src='$file_name_new' width='600' alt='$pic_title' class='alignright border' />");
 	print("</article>");
 } else if($flag2) {
 	print("<h3 class='heading'>写真アップロード失敗</h3>");

@@ -1,4 +1,6 @@
 <?php
+require 'password.php';
+
 session_start();
 $is_login = isset($_SESSION["user_id"]);
 
@@ -19,7 +21,7 @@ if($is_login){
 
 $user_id = $_POST['user_id'];
 $user_name = $_POST['user_name'];
-$user_pass = $_POST['user_pass'];
+$user_pass = password_va $_POST['user_pass'];
 
 
 $sql = "insert into users(id, name, pass) value('$user_id', '$user_name', '$user_pass');";

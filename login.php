@@ -1,4 +1,6 @@
 <?php
+require 'password.php';
+
 session_start();
 $host = "localhost";
 if(!$conn = mysql_connect($host, "s1413137", "s1413137hoge")){

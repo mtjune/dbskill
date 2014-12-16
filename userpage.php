@@ -132,11 +132,8 @@ if($is_login){
     print("</section>\n");
 }
 ?>
-    </section>
-        <!-- / コンテンツ -->
 
-
-        <!-- 説明 -->
+    <!-- 説明 -->
         <fieldset>
             <legend>
                 操作説明
@@ -146,6 +143,8 @@ if($is_login){
             ブックマークの登録は写真のページから行ってください。
         </fieldset>
         <!-- /説明 -->
+    </section>
+        <!-- / コンテンツ -->
 
         <aside id="sidebar">
         <h3 class="heading">ブックマークしているタグ</h3>

@@ -19,7 +19,7 @@ $row = mysql_fetch_assoc($res);
 if(mysql_num_rows($res) == 0){
     // IDが存在しない
     $login_result = 1;
-}else if(password_verify($login_user_pass, $row['pass']){
+}else if(password_verify($login_user_pass, $row['pass'])){
     // ログイン成功
     $_SESSION['user_id'] = $login_user_id;
     $login_result = 0;

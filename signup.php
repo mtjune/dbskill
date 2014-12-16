@@ -22,10 +22,7 @@ if($is_login){
 $user_id = $_POST['user_id'];
 $user_name = $_POST['user_name'];
 
-$options = [
-    'cost' => 12,
-];
-$user_pass = password_hash($_POST['user_pass'], PASSWORD_BCRYPT, $options);
+$user_pass = password_hash($_POST['user_pass'], PASSWORD_DEFAULT);
 
 
 $sql = "insert into users(id, name, pass) value('$user_id', '$user_name', '$user_pass');";
